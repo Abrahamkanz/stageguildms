@@ -1,0 +1,384 @@
+---
+title: "Emergence"
+author: "Abraham Kanz"
+date: "February 19, 2019"
+output: word_document
+---
+```{r}
+library(ggplot2)
+library(tidyverse)
+library(plyr)
+library(lubridate)
+library(brms)
+library(officer)
+```
+
+
+```{r}
+ggplot(emergence_update2,aes(x=col_date,y=chironomidae))+
+  geom_point()
+```
+
+#Formatting for spread= spread(data_frame, column_to_spread, column_to_spread_against) 
+#spread(data, key, value)
+
+```{r}
+emerge_dm %>%
+  select(-mean,-sd,-alpha,-beta,-draw_mg,-notes, -date, -abund) %>%
+  mutate(col_date = as.factor(col_date)) %>%
+  separate(col_date, c("year", "month","day", sep="-"))%>%
+  select(taxon, year, month, day, tank, trt, mg_dm) %>%
+  unite(temp,year, month, day,trt,tank) %>%
+  mutate(mg_dm = replace_na(mg_dm,0)) %>%
+  #mutate(id=1:n())%>%
+  spread(taxon,mg_dm)%>%
+  separate(temp, c("year","month","day","trt","tank"), by="_") %>%
+  unite(col_date, year,month,day) %>%
+  mutate(tot_mg = rowSums(.[4:13]))
+```
+
+
+```{r}
+ggplot(dragonfly_emerge,aes(x=col_date,y=number_emerg))+
+  geom_point(aes(y=number_emerg, col="number_emerg"))+
+  geom_point(aes(y=number_exuvia, col="number_exuvia"))
+  #geom_smooth(aes(col_date,number_emerg),colour="red",method="lm")+
+  #geom_smooth(aes(col_date,number_exuvia),colour="blue",method="lm")+
+  NULL
+  
+```
+
+
+
+
+```{r}
+dragonfly_emerge %>%
+  ggplot(aes(x=number_emerg,y=number_exuvia))+
+  geom_point(position=position_jitter(width=0.1))+
+  facet_wrap(~col_date)+
+  geom_smooth(method="lm")
+```
+
+#emergence 0.36 m^2
+#tank r=36 inch =0.91m
+
+```{r}
+3.14*0.91^2
+```
+
+
+```{r}
+dragonfly_mean_dm<-as.data.frame(dragonfly_mean_dm)
+dragonfly_emerge<-as.data.frame(dragonfly_emerge)
+```
+
+
+```{r}
+dragonfly_emerge_new<-merge(dragonfly_emerge4,dragonfly_mean_dm,by="taxon", all.x="TRUE")
+```
+
+```{r}
+dragonfly_emerge_new<-as.data.frame(dragonfly_emerge_new)
+```
+
+```{r}
+tank_trt <- other_for_emerge%>%
+  select(tank,trt) %>%
+  distinct
+
+
+
+dragonfly_m_day<-dragonfly_emerge_new %>%
+  mutate(alpha = mean^2/sd^2,
+         beta = mean/sd^2,
+         draw_mg = rgamma(nrow(dragonfly_emerge_new), shape=alpha, rate=beta),
+         mg_dm_emerge = draw_mg*number_emerg,
+         mg_dm_exuvia= draw_mg*number_exuvia,
+         emerge_mg_ms= mg_dm_emerge/0.36,
+         emerge_mg_ms_day= emerge_mg_ms/days,
+         exuvia_mg_ms= mg_dm_exuvia/2.6,
+         exuvia_mg_ms_day= exuvia_mg_ms/days)%>%
+  replace(is.na(.),0)%>%
+  mutate(mg_dm_m_day= emerge_mg_ms_day + exuvia_mg_ms_day)%>%
+  merge(tank_trt)
+
+
+
+  
+```
+
+
+```{r}
+dragonfly_for_merge<-dragonfly_m_day%>%
+  select(taxon, col_date,tank,trt, mean, sd, alpha, beta, draw_mg, mg_dm_m_day)
+```
+
+```{r}
+other_for_emerge<- emergence_m_day%>%
+  select(taxon, col_date, tank,trt, mean, sd, alpha, beta, draw_mg, mg_dm_m_day)
+```
+
+```{r}
+emerge_dm_new<-rbind(other_for_emerge,dragonfly_for_merge)
+```
+
+
+
+```{r}
+emerge_data2<-emerge_dm_new %>%
+  select(-mean,-sd,-alpha,-beta,-draw_mg) %>%
+  mutate(col_date = as.factor(col_date)) %>%
+  separate(col_date, c("year", "month","day", sep="-"))%>%
+  select(taxon, year, month, day, tank, trt, mg_dm_m_day) %>%
+  unite(temp,year, month, day, trt, tank) %>%
+  mutate(mg_dm_m_day = replace_na(mg_dm_m_day,0)) %>%
+  #mutate(id=1:n())%>%
+  spread(taxon,mg_dm_m_day)%>%
+  separate(temp, c("year","month","day", "trt", "tank"), by="_") %>%
+  unite(col_date, year,month,day) %>%
+  mutate(pantala=replace_na(pantala,0)) %>%
+  mutate(sympetrum=replace_na(sympetrum,0))%>%
+  replace(is.na(.),0)%>%
+  mutate(tot_mg = rowSums(.[4:13]))%>%
+  mutate(date = ymd(col_date))%>%
+  mutate(day = yday(date))
+```
+
+
+
+```{r}
+ggplot(emerge_data2,aes(x=day,y=tot_mg, col=trt))+
+  geom_point()+
+  geom_smooth()+
+  facet_wrap(~trt)
+```
+
+
+```{r}
+library(brms)
+emerge_data2$tank <- as.integer(emerge_data2$tank)
+emerge_data2$trt <- as.factor(emerge_data2$trt)
+
+get_prior(tot_mg~s(day, by=trt) + (1|tank) + trt, data=emerge_data2, family=Gamma(link="log"))
+
+gam_mod <- brm(tot_mg~s(day, by=trt) + (1|tank) + trt, data=emerge_data2, family=Gamma(link="log"),
+               chains=4, cores=4)
+
+print(gam_mod)
+plot(marginal_effects(gam_mod),points=T)
+
+```
+
+
+
+```{r}
+#get posterior summaries
+summary(emerge_data2$day)
+nd = data.frame(day = seq(from=159, to =218, length.out=59),
+                trt = "ctrl")
+
+gam_mod_fit_ctrl <- data.frame(fitted(gam_mod, newdata=nd, summary=T, re_formula=NA),
+trt="ctrl", day=seq(from=159, to =218, length.out=59))
+
+nd_c = data.frame(day = seq(from=159, to =218, length.out=59),
+                trt = "carp", day=seq(from=159, to =218, length.out=59))
+
+gam_mod_fit_carp <- data.frame(fitted(gam_mod, newdata = nd_c, summary=T, re_formula=NA), trt="carp", day=seq(from=159, to =218, length.out=59))
+                               
+nd_s = data.frame(day = seq(from=159, to =218, length.out=59),
+                trt = "spot")
+
+gam_mod_fit_spot <- data.frame(fitted(gam_mod, newdata=nd_s, summary=T, re_formula=NA), trt="spot", day=seq(from=159, to =218, length.out=59))
+
+nd_full<-rbind(nd, nd_c, nd_s)
+
+gam_mod_fitted <- fitted(gam_mod, new_data=nd_full, summary=T, re_formula=NA)
+
+gam_mod_fit_all <- rbind(gam_mod_fit_ctrl, gam_mod_fit_carp, gam_mod_fit_spot)
+
+```
+
+
+
+```{r}
+#emergence_plot <- ggplot()+
+#  geom_ribbon(data=gam_mod_fit_all, aes(x=day, y=Estimate, ymax=Q97.5, ymin=Q2.5, fill=trt), alpha=0.4)+
+#  geom_line(data=gam_mod_fit_all, aes(x=day, y=Estimate), alpha=0.4)+
+#  xlab("Julian Date (day of year)")+
+#  ylab("Emergence (mg dry mass/m^2/day)")+
+#  theme(axis.title = element_text(size=20),
+#        text = element_text(size=20))+
+  #scale_fill_grey()+
+#  theme_classic()+
+#  theme(axis.title = element_text(size=20),
+#        text = element_text(size=25))+
+#  geom_point(data=emerge_data2, aes(x=day, y=tot_mg, fill=trt))+
+#  NULL
+```
+
+
+```{r}
+ggsave(emergence_plot, file="emergence_plot.jpg", dpi=600, width=12, height=5, units="in")
+```
+
+
+```{r}
+nd = data.frame(day = seq(from=159, to =218, length.out=59),
+                trt = "ctrl")
+nd_s = data.frame(day = seq(from=159, to =218, length.out=59),
+                trt = "spot")
+nd_c = data.frame(day = seq(from=159, to =218, length.out=59),
+                trt = "carp")
+
+gam_mod_post_ctrl <- data.frame(fitted(gam_mod, newdata=nd, summary=F, re_formula=NA,nsamples=1000))
+ 
+gam_mod_post_ctrl %>%
+  mutate(total = rowSums(.))%>%
+  summarize(median = median(total),
+            upper = quantile(total, probs=0.975),
+            lower = quantile(total, probs=0.025))
+
+gam_mod_post_carp <- data.frame(fitted(gam_mod, newdata=nd_c, summary=F, re_formula=NA,nsamples=1000))
+ 
+gam_mod_post_carp %>%
+  mutate(total_carp = rowSums(.))%>%
+  summarize(median = median(total_carp),
+            upper = quantile(total_carp, probs=0.975),
+            lower = quantile(total_carp, probs=0.025))
+
+gam_mod_post_spot <- data.frame(fitted(gam_mod, newdata=nd_s, summary=F,
+                                       re_formula = NA, nsamples=1000))
+
+gam_mod_post_spot %>%
+  mutate(total_spot = rowSums(.))%>%
+  summarize(median = median(total_spot),
+            upper = quantile(total_spot, probs=0.0975),
+            lower = quantile(total_spot, probs=0.025))
+
+total_carp <- gam_mod_post_carp %>%
+  mutate(total_carp = rowSums(.)) %>%
+  select(total_carp)
+
+total_ctrl <- gam_mod_post_ctrl %>%
+  mutate(total_ctrl = rowSums(.)) %>%
+  select(total_ctrl)
+
+total_spot <- gam_mod_post_spot %>%
+  mutate(total_spot = rowSums(.)) %>%
+  select(total_spot)
+
+all_post <- data.frame(total_carp, total_ctrl, total_spot)
+
+```
+
+
+
+```{r}
+all_post_summary <- all_post %>%
+  mutate(diff_carp_ctrl = total_carp - total_ctrl)%>%
+  mutate(diff_spot_ctrl = total_spot - total_ctrl)%>%
+  mutate(diff_carp_spot = total_carp - total_spot)%>%
+  summarize(median_carp_ctrl = median(diff_carp_ctrl),
+            upper_carp_ctrl = quantile(diff_carp_ctrl, probs=0.975),
+            lower_carp_ctrl = quantile(diff_carp_ctrl, probs=0.025),
+            median_spot_ctrl = median(diff_spot_ctrl),
+            upper_spot_ctrl = quantile(diff_spot_ctrl, probs=0.975),
+            lower_spot_ctrl = quantile(diff_spot_ctrl, probs=0.025),
+            median_carp_spot = median(diff_carp_spot),
+            upper_carp_spot = quantile(diff_carp_spot, probs=0.975),
+            lower_carp_spot = quantile(diff_carp_spot, probs=0.025)) 
+```
+
+```{r}
+all_diff_carp_ctrl<-all_post$total_carp-all_post$total_ctrl
+```
+
+```{r}
+total_carp_data_all<-all_post$total_carp
+```
+
+```{r}
+total_ctrl_data_all<-all_post$total_ctrl
+```
+
+
+```{r}
+complete_all_diff_carp_ctrl<-as.data.frame(cbind(total_carp_data_all,total_ctrl_data_all,all_diff_carp_ctrl))
+```
+
+
+```{r}
+complete_all_diff_carp_ctrl$post_diff_carp_ctrl<-all_diff_carp_ctrl<0
+sum(complete_all_diff_carp_ctrl$post_diff_carp_ctrl)/1000
+quantile(complete_all_diff_carp_ctrl$all_diff_carp_ctrl, probs=c(0.025,0.5,0.975))
+```
+
+
+```{r}
+emergence_plot_ctrl <- ggplot(data=subset(gam_mod_fit_all,trt=="ctrl"), aes(x=day, y=Estimate, ymax=Q97.5, ymin=Q2.5, fill=trt), alpha=0.4)+
+  geom_ribbon(alpha=0.4)+
+  geom_line()+
+  xlab("Julian Date (day of year)")+
+  ylab("Emergence (mg dry mass/m^2)")+
+  theme(axis.title = element_text(size=20),
+        text = element_text(size=20))+
+  theme_classic()+
+  theme(axis.title = element_text(size=20),
+        text = element_text(size=25))+
+  #scale_fill_grey()+
+  NULL
+```
+
+```{r}
+emergence_plot_ctrl_spot <- ggplot(data=subset(gam_mod_fit_all,trt=="ctrl"|trt=="spot"), aes(x=day, y=Estimate, ymax=Q97.5, ymin=Q2.5, fill=trt), alpha=0.4)+
+  geom_ribbon(alpha=0.4)+
+  geom_line()+
+  xlab("Julian Date (day of year)")+
+  ylab("Emergence (mg dry mass/m^2)")+
+  theme(axis.title = element_text(size=20),
+        text = element_text(size=20))+
+  theme_classic()+
+  theme(axis.title = element_text(size=20),
+        text = element_text(size=25))+
+  #scale_fill_grey()+
+  NULL
+```
+
+
+
+
+```{r}
+ggsave(emergence_plot_ctrl, file="emergence_plot_ctrl.jpg", dpi=600, width=12, height=5, units="in")
+```
+
+```{r}
+ggsave(emergence_plot_ctrl_spot, file="emergence_plot_ctrl_spot.jpg", dpi=600, width=12, height=5, units="in")
+```
+
+
+#Add spot and get summary stats. Look at peaks. 
+#Do emergence again without dragonflies. 
+#Take a look at chloro, image j, model (not gamma), relates to benthics
+
+```{r}
+gam_mod_post_carp %>%
+  mutate(total_carp = rowSums(.))%>%
+  summarize(median = median(total_carp),
+            upper = quantile(total_carp, probs=0.975),
+            lower = quantile(total_carp, probs=0.025),
+            mean = mean(total_carp))
+
+
+gam_mod_post_spot %>%
+  mutate(total_spot = rowSums(.))%>%
+  summarize(median = median(total_spot),
+            upper = quantile(total_spot, probs=0.0975),
+            lower = quantile(total_spot, probs=0.025),
+            mean = mean(total_spot))
+
+
+```
+
+
+
+

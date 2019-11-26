@@ -1,0 +1,328 @@
+---
+title: "Diet 3 Changes"
+author: "Abraham Kanz"
+date: "November 30, 2018"
+output: word_document
+---
+
+
+```{r}
+library(brms)
+library(ggplot2)
+library(rethinking)
+library(tidyverse)
+```
+
+```{r}
+diet_data_update.df<-as.data.frame(diet_data_update2)
+
+diet_data_update.df$species<-ifelse(diet_data_update.df$fish=="spot",1,0)
+
+diet_complete<-diet_data_update.df[!is.na(diet_data_update.df$prop_pup),]
+diet_complete$chiro_p<-as.integer(diet_complete$chiro_p)
+diet_complete$total_chiro<-as.integer(diet_complete$total_chiro)
+diet_complete$days <- as.factor(diet_complete$days)
+diet_complete$species <- as.factor(diet_complete$species)
+```
+
+
+```{r}
+brm_m2 <- brm(chiro_p|trials(total_chiro) ~ days*species + (1+days*species|tank), data=diet_complete, family = binomial(link="logit"),
+              prior = c(prior(normal(0,5), class = "b"),
+                        prior(normal(0,5), class = "Intercept"),
+                        prior(cauchy(0,1),class= "sd"),
+                        prior(lkj(1),class="cor")),
+              cores = 4)
+
+```
+
+
+```{r}
+post_brm2 <- posterior_samples(brm_m2)
+```
+
+```{r}
+carp_5 <- logistic(post_brm2$b_Intercept)
+carp_12 <- logistic(post_brm2$b_Intercept + post_brm2$b_days12)
+carp_19 <- logistic(post_brm2$b_Intercept + post_brm2$b_days19)
+carp_26 <- logistic(post_brm2$b_Intercept + post_brm2$b_days26)
+carp_34 <- logistic(post_brm2$b_Intercept + post_brm2$b_days34)
+carp_40 <- logistic(post_brm2$b_Intercept + post_brm2$b_days40)
+carp_47 <- logistic(post_brm2$b_Intercept + post_brm2$b_days47)
+carp_55 <- logistic(post_brm2$b_Intercept + post_brm2$b_days55)
+
+spot_5 <- logistic(post_brm2$b_Intercept + post_brm2$b_species1)
+spot_12 <- logistic(post_brm2$b_Intercept+
+                      post_brm2$b_species1+
+                      post_brm2$b_days12+
+                      post_brm2$`b_days12:species1`)
+spot_19 <- logistic(post_brm2$b_Intercept+
+                      post_brm2$b_species1+
+                      post_brm2$b_days19+
+                      post_brm2$`b_days19:species1`)
+spot_26 <- logistic(post_brm2$b_Intercept+
+                      post_brm2$b_species1+
+                      post_brm2$b_days26+
+                      post_brm2$`b_days26:species1`)
+spot_34 <- logistic(post_brm2$b_Intercept+
+                      post_brm2$b_species1+
+                      post_brm2$b_days34+
+                      post_brm2$`b_days34:species1`)
+spot_40 <- logistic(post_brm2$b_Intercept+
+                      post_brm2$b_species1+
+                      post_brm2$b_days40+
+                      post_brm2$`b_days40:species1`)
+spot_47 <- logistic(post_brm2$b_Intercept+
+                      post_brm2$b_species1+
+                      post_brm2$b_days47+
+                      post_brm2$`b_days47:species1`)
+spot_55 <- logistic(post_brm2$b_Intercept+
+                      post_brm2$b_species1+
+                      post_brm2$b_days55+
+                      post_brm2$`b_days55:species1`)
+```
+
+
+```{r}
+plot_brm2 <- as.data.frame(cbind(carp_5, carp_12,carp_19, carp_26,carp_34, carp_40, carp_47, carp_55,
+                                spot_5, spot_12, spot_19, spot_26, spot_34, spot_40, spot_47, spot_55))
+plot_brm2 <- gather(plot_brm2, trt, prop_p)
+plot_brm2$fish <- str_sub(plot_brm2$trt, 1, 4)
+plot_brm2$day <- str_sub(plot_brm2$trt, -2)
+```
+
+```{r}
+test2<-plot_brm2
+test2[test2=="_5"]<-5
+test2$day<-as.factor(test2$day)
+```
+
+```{r}
+plot_brm2[plot_brm2=="_5"]<-5
+plot_brm2$day<-as.factor(plot_brm2$day)
+```
+
+
+```{r}
+plot3<-ggplot(plot_brm2, aes(x=day, y=prop_p,  fill=fish))+
+           geom_boxplot(outlier.color = NA,width=0.5)+
+  scale_fill_grey(start=0.4)+
+  theme_classic()+
+  xlab("Day of experiment")+
+  ylab("Proportion of pupae")+
+  theme(axis.title = element_text(size=30),
+        text = element_text(size=25))+
+  coord_cartesian(ylim=c(0,1))+
+  scale_x_discrete(labels=c("_5"="5","12"="12","19"="19","26"="26","34"="34","40"="40","47"="47","55"="55"))
+```
+
+
+#moved to diet3_updated_plot
+```{r}
+plot_4<-ggplot()+
+  geom_boxplot(plot_brm2, aes(x=day, y=prop_p,  fill=fish),outlier.color = NA,width=0.5)+
+  scale_fill_grey(start=0.4)+
+  theme_classic()+
+  xlab("Day of experiment")+
+  ylab("Proportion of pupae")+
+  theme(axis.title = element_text(size=30),
+        text = element_text(size=25))+
+  coord_cartesian(ylim=c(0,1))+
+  geom_jitter(data=diet_complete,aes(x=day,y=prop_p, col=fish),width=0, height = 0)+
+  scale_x_discrete(limits=c("5","12","19","26","34","40","47","55"))+
+  NULL
+```
+
+```{r}
+ggsave(plot_4, file="plot_4.jpg", dpi=600, width=12, height=5, units="in")
+```
+
+
+```{r}
+test<-diet_complete
+test$day<-test$days
+test$prop_p<-test$prop_pup
+test$day<-as.factor(test$day)
+```
+
+```{r}
+diet_complete$day<-diet_complete$days
+diet_complete$prop_p<-diet_complete$prop_pup
+diet_complete$day<-as.factor(diet_complete$day)
+```
+
+
+```{r}
+plot3
+```
+
+```{r}
+ggsave(plot3, file="plot_3.jpg", dpi=600, width=12, height=5, units="in")
+```
+
+
+```{r}
+ggplot(plot_trial, aes(x=prop_p,  fill=fish))+
+       geom_density()
+```
+
+```{r}
+plot_trial<-as.data.frame(cbind(carp2_5,spot2_5))
+plot_trial<-gather(plot_trial,trt,prop_p)
+plot_trial$fish <- str_sub(plot_trial$trt, 1, 4)
+plot_trial$day <- str_sub(plot_trial$trt, -2)
+```
+
+```{r}
+plot_trial2<-as.data.frame(cbind(carp2_55,spot2_55))
+plot_trial2<-gather(plot_trial2,trt,prop_p)
+plot_trial2$fish <- str_sub(plot_trial2$trt, 1, 4)
+plot_trial2$day <- str_sub(plot_trial2$trt, -2)
+```
+
+```{r}
+ggplot(plot_trial2, aes(x=prop_p,  fill=fish))+
+       geom_density()
+```
+
+```{r}
+plot_spot26<-as.data.frame(spot_26)
+plot_spot26<-gather(plot_spot26,trt,prop_p)
+plot_spot26$fish <- str_sub(plot_spot26$trt, 1, 4)
+plot_spot26$day <- str_sub(plot_spot26$trt, -2)
+```
+
+
+```{r}
+plot_spot47<-as.data.frame(spot_47)
+plot_spot47<-gather(plot_spot47,trt,prop_p)
+plot_spot47$fish <- str_sub(plot_spot47$trt, 1, 4)
+plot_spot47$day <- str_sub(plot_spot47$trt, -2)
+```
+
+
+```{r}
+plot_spot55<-as.data.frame(spot_55)
+plot_spot55<-gather(plot_spot55,trt,prop_p)
+plot_spot55$fish <- str_sub(plot_spot55$trt, 1, 4)
+plot_spot55$day <- str_sub(plot_spot55$trt, -2)
+```
+
+
+Plots for spotfin on days 26, 47, and 55
+
+```{r}
+ggplot(plot_spot26, aes(x=prop_p,  fill=fish))+
+       geom_density()
+```
+
+```{r}
+ggplot(plot_spot47, aes(x=prop_p,  fill=fish))+
+       geom_density()
+```
+
+```{r}
+ggplot(plot_spot55, aes(x=prop_p,  fill=fish))+
+       geom_density()
+```
+
+
+```{r}
+diff_26<-spot_26 - carp_26
+```
+
+```{r}
+diff_26all<-as.data.frame(cbind(spot_26,carp_26,diff_26))
+```
+
+```{r}
+diff_26all$pos_diff <- diff_26>0
+sum(diff_26all$pos_diff)/4000
+quantile(diff_26all$diff_26, probs=c(0.025,0.5,0.975))
+ggplot(diff_26all, aes(x=diff_26))+
+  geom_density(fill="blue", alpha=0.4)+
+  coord_cartesian(xlim=c(-1,1))
+```
+
+
+```{r}
+diet_complete_gather<-gather(diet_complete, taxa, abund,chiro_l:dragon_ex)
+```
+
+
+
+```{r}
+diet_overview<-ggplot(data=diet_complete_gather, aes(x=taxa,y=abund,color=fish))+
+  geom_point()+
+  facet_grid(fish~.)+
+  geom_jitter(width=0, height=0.5)+
+  theme(axis.text.x=element_text(angle=90,hjust=1,vjust=0.5))+
+  theme(axis.title = element_text(size=20),
+        text = element_text(size=20))+
+  scale_x_discrete(labels=c("Aphid"="Aphid","branch"="Branchiopoda","Cerat"="Ceratopogonidae","chiro_A"="Chironomid_Adult","chiro_l"="Chironomid_Larval","chiro_p"="Chironomid_Pupal","coleo_A"="Coleoptera_Adult","coleo_l"="Coleoptera_Larval","coll"="Collembola","Dolicho"="Dolichopodidae","dragon_ex"="Dragonfly_Exuvia","dragon_L"="Dragonfly_Larval","Fly_T"="Terrestrial_Fly","hym_T"="Terrestrial_Hymenoptera","mites"="Mites","odo"="Odonata","Snail"="Snail","spotfin_L"="Larval_Spotfin","thys_T"="Thysanoptera","Tromb(mite)"="Mite","zoop"="Zooplankton"))+
+  xlab("Taxa")+
+  ylab("Abundance")+
+  labs(color="Fish")+
+  NULL
+```
+
+```{r}
+ggsave(diet_overview, file="diet_overview.jpg", dpi=600, width=14, height=6, units="in")
+```
+
+
+```{r}
+diet_complete_summary<-diet_complete
+diet_complete_summary$tot_chiro<-diet_complete_summary$chiro_l+diet_complete_summary$chiro_p+diet_complete_summary$chiro_A
+```
+
+```{r}
+diet_complete_summary$dragonflies<-diet_complete_summary$odo+diet_complete_summary$dragon_L+diet_complete_summary$dragon_ex
+```
+
+
+```{r}
+diet_complete_summary$other_taxa<-diet_complete_summary$zoop+diet_complete_summary$mites+diet_complete_summary$hym_T+diet_complete_summary$`Tromb (mite)`+diet_complete_summary$coleo_l+diet_complete_summary$coleo_A+diet_complete_summary$Fly_T+diet_complete_summary$Aphid+diet_complete_summary$Cerat+diet_complete_summary$Dolicho
+```
+
+```{r}
+diet_complete_summary_plot<-diet_complete_summary%>%
+  select(tank,fish,date,species,tot_chiro,other_taxa,snail,thys_T,coll,spotfin_L, dragonflies)
+```
+
+```{r}
+diet_complete_summary_plot_gather<-gather(diet_complete_summary_plot, taxa, abund,tot_chiro:dragonflies)
+```
+
+
+```{r}
+diet_overview_summary<-ggplot(data=diet_complete_summary_plot_gather, aes(x=fish,y=abund,color=reorder(taxa,-abund)))+
+  #facet_grid(fish~.)+
+  #geom_jitter(width=0.075, height=0)
+  geom_point(position=position_jitterdodge(jitter.width = 0.30,dodge.width = 0.85),alpha=0.7)+
+  theme_classic()+
+  theme(axis.title = element_text(size=30),
+        text = element_text(size=30))+
+  ylab("Abundance")+
+  xlab("Fish")+
+  labs(color="Fish")+
+  scale_color_discrete(labels=c("other_taxa"="Other Taxa","tot_chiro"="Total Chiro","snail"="Snail","spotfin_L"="Larval Spotfin","thys_T"="Thysanoptera","coll"="Collembola", "dragonflies"="Dragonflies"))+
+  scale_x_discrete(labels=c("carp"="Carp","spot"="Spotfin"))+
+  NULL
+
+diet_overview_summary
+```
+
+```{r}
+ggsave(diet_overview_summary, file="diet_overview_summary.jpg", dpi=600, width=12, height=6, units="in")
+```
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,376 @@
+Taxon,Group,Further_grouping,Mass type,"Equation M[mg], L[mm]",a,b,Min (mm),Max (mm),Reference,Details of body length measurement,Regression_specificity
+Annelida,All,,ash free dry mass,M = 1000*exp(a + b * log(L)),-11.8423,2.3225,,,"(Hale, Reich & Frelich, 2004)",Total length,General
+,,,mass,,,,,,,,Lumbricidae
+Araneae,Araneae < 2.5 mm,,Fresh mass,M = exp(a + b * log(L)),-1.958,2.746,0.56,2.5,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,Group specific
+,,,,,,,,,,opisthosoma (excl spinnerets),
+Araneae,hunting,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,Group specific
+,,,,,,,,,,opisthosoma (excl spinnerets),
+Araneae,web-building,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,Group specific
+,,,,,,,,,,opisthosoma (excl spinnerets),
+Araneae,spiders random,,fresh mass,M = exp(a + b * log(L)),-1.844,2.711,1.8,21.5,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Anapidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Araneidae,,Fresh mass,M = exp(a + b * log(L)),-1.923,2.923,2.1,21.2,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Barychelidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Clubionidae,,Fresh mass,M = exp(a + b * log(L)),-2.156,2.653,2.5,9,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Corinnidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Ctenidae,,Fresh mass,M = exp(a + b * log(L)),-1.758,2.894,1.3,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,Group specific
+,,,,,,,,,,opisthosoma (excl spinnerets),
+Araneae,Deinopidae,,fresh mass,M = exp(a + b * log(L)),-1.844,2.711,1.8,21.5,"(Edwards, 1996)",clypeus to tip of spinnerets,"inferred, spiders"
+,,,,,,,,,,,random sample
+Araneae,Gnaphosidae,,Fresh mass,M = exp(a + b * log(L)),-2.83,3.055,3,13.1,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Hexathelidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Lamponidae,,Fresh mass,M = exp(a + b * log(L)),-2.83,3.055,3,13.1,"(Edwards, 1996)",clypeus to tip of spinnerets,"inferred,"
+,,,,,,,,,,,Gnaphosidae
+Araneae,Linyphiidae,,Fresh mass,M = exp(a + b * log(L)),-1.892,2.754,1.5,5.5,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Lycosidae,,Fresh mass,M = exp(a + b * log(L)),-2.043,2.842,2,23.5,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Micropholcommatidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Miturgidae,,Fresh mass,M = exp(a + b * log(L)),-2.83,3.055,3,13.1,"(Edwards, 1996)",clypeus to tip of spinnerets,"inferred,"
+,,,,,,,,,,,Gnaphosidae
+Araneae,Mysmenidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Nemesiidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Nephilidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Ochyroceratidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Oonopidae,,Fresh mass,M = exp(a + b * log(L)),-2.039,2.666,0.67,2.5,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,Group specific
+,,,,,,,,,,opisthosoma (excl spinnerets),
+Araneae,Oxyopidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Palpimanidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Pararchaeidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Philodromidae,,Fresh mass,M = exp(a + b * log(L)),-1.985,2.94,2.5,8.6,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Pholcidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Prodidomidae,,Fresh mass,M = exp(a + b * log(L)),-2.83,3.055,3,13.1,"(Edwards, 1996)",clypeus to tip of spinnerets,"inferred,"
+,,,,,,,,,,,Gnaphosidae
+Araneae,Salticidae,,Fresh mass,M = exp(a + b * log(L)),-2.184,2.901,4,13,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Scytodidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Segestriidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Sparassidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Stenochilidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Araneae,Symphytognathidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Telemidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Tetrablemmidae,,Fresh mass,M = exp(a + b * log(L)),-2.039,2.666,0.67,2.5,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, Oonopidae"
+,,,,,,,,,,opisthosoma (excl spinnerets),
+Araneae,Tetragnathidae,,Fresh mass,M = exp(a + b * log(L)),-2.615,2.574,3.5,9,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Theridiidae,,Fresh mass,M = exp(a + b * log(L)),-1.577,2.907,1.5,7.5,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Theridiosomatidae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Thomisidae,,Fresh mass,M = exp(a + b * log(L)),-1.644,2.973,1.8,8,"(Edwards, 1996)",clypeus to tip of spinnerets,Group specific
+Araneae,Uloboridae,,Fresh mass,M = exp(a + b * log(L)),-1.784,2.255,0.56,10.67,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, web-"
+,,,,,,,,,,opisthosoma (excl spinnerets),building
+Araneae,Unidentifiable < 1.8,,Fresh mass,M = exp(a + b * log(L)),-1.958,2.746,0.56,2.5,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, Araneae <"
+,,,,,,,,,,opisthosoma (excl spinnerets),2.5 mm
+Araneae,Unidentifiable > 1.8,,fresh mass,M = exp(a + b * log(L)),-1.844,2.711,1.8,21.5,"(Edwards, 1996)",clypeus to tip of spinnerets,"inferred, spiders"
+,,,,,,,,,,,random sample
+Araneae,Zodariidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Archaeognatha,All,,Dry mass,M = exp(a + b * log(L)),-3.628,2.494,2.13,54.51,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, all insect"
+,,,,,,,,,,appendages,taxa
+Blattodea,Blaberidae,,Dry mass,M = exp(a + b * log(L)),-3.98,2.76,2.2,14,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred, Blattodea"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Blattodea,Blattellidae,,Dry mass,M = exp(a + b * log(L)),-3.98,2.76,2.2,14,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred, Blattodea"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Blattodea,Blattidae,,Dry mass,M = exp(a + b * log(L)),-3.98,2.76,2.2,14,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred, Blattodea"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Blattodea,Unidentifiable,,Dry mass,M = exp(a + b * log(L)),-3.98,2.76,2.2,14,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred, Blattodea"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Chilopoda,Ballophilidae,,Dry mass,M = exp(a + b * log(L)),-4.049,2.18,4,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Chilopoda"
+Chilopoda,Cryptopidae,,Dry mass,M = exp(a + b * log(L)),-4.049,2.18,4,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Chilopoda"
+Chilopoda,Henicopidae,,Dry mass,M = exp(a + b * log(L)),-4.049,2.18,4,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Chilopoda"
+Chilopoda,Lithobiomorpha,,Dry mass,M = exp(a + b * log(L)),-4.049,2.18,4,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Chilopoda"
+Chilopoda,Mecistocephalidae,,Dry mass,M = exp(a + b * log(L)),-4.049,2.18,4,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Chilopoda"
+Chilopoda,Scolopendridae,,Dry mass,M = exp(a + b * log(L)),-4.049,2.18,4,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Chilopoda"
+Chilopoda,Unidentifiable,,Dry mass,M = exp(a + b * log(L)),-4.049,2.18,4,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Chilopoda"
+Coleoptera,Anobiidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Anthicidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Bostrichidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Byrrhidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Carabidae,,Dry mass,M = a * L^b,0.0237,2.7054,2.88,24,"(Lang, Krooss & Stumpf, 1997)",Measured from anterior tip of head to posterior of,Group specific
+,,,,,,,,,,abdomen excluding any appendages,
+Coleoptera,Cerylonidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Chelonariidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Chrysomelidae,,Dry mass,M = exp(a + b * log(L)),-2.427,2.171,3.34,7.84,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,Group specific
+,,,,,,,,,,appendages,
+Coleoptera,Ciidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Cleridae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Coccinellidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Colydiidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Curculionidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Dermestidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Discolomidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+Coleoptera,Elateridae,,Dry mass,M = a * L^b,0.0138,2.595,1.65,10.3,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, slender"
+,,,,,,,,,,any appendages,beetles
+Coleoptera,Endomychidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Histeridae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Hydrophilidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Languriidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Larvae,,Dry mass,M = a * L^b,0.0035,2.4033,1.5,25.27,"(Lang, Krooss, & Stumpf, 1997)",Measured from anterior tip of head to posterior of,"inferred, Coleoptera"
+,,,,,,,,,,abdomen excluding any appendages,
+Coleoptera,Leiodidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Lucanidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Melyridae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Mordellidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Mycetophagidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Pselaphidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Ptiliidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Scarabaeidae,,Dry mass,M = exp(a + b * log(L)),-2.448,2.494,4.24,24.79,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,Group specific
+,,,,,,,,,,appendages,
+Coleoptera,Scydmaenidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Silvanidae,,Dry mass,M = a * L^b,0.0138,2.595,1.65,10.3,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, slender"
+,,,,,,,,,,any appendages,beetles
+Coleoptera,Staphylinidae,,Dry mass,M = a * L^b,0.0134,2.26,2.2,13.6,"(Lang, Krooss, & Stumpf, 1997)",Measured from anterior tip of head to posterior of,Group specific
+,,,,,,,,,,abdomen excluding any appendages,
+Coleoptera,Tenebrionidae,,Dry mass,M = exp(a + b * log(L)),-0.043,1.2,5.65,13.39,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,Group specific
+,,,,,,,,,,appendages,
+Coleoptera,Throscidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Trogossitidae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Unidentifiable,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Coleoptera,Zopheridae,,Dry mass,M = exp(a + b * log(L)),-3.247,2.492,3.34,34.82,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Coleoptera"
+,,,,,,,,,,appendages,
+Dermaptera,Anisolabididae,,Dry mass,M = exp(a + b * log(L)),-3.628,2.494,2.13,54.51,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, all insect"
+,,,,,,,,,,appendages,taxa
+Dermaptera,Forficulidae,,Dry mass,M = exp(a + b * log(L)),-3.628,2.494,2.13,54.51,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, all insect"
+,,,,,,,,,,appendages,taxa
+Diplopoda,Chordeumatida,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplopoda,Glomerida,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplopoda,Polidesmatidae,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplopoda,Polydesmatida,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplopoda,Polydesmida,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplopoda,Polydesmidae,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplopoda,Polyxenida,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplopoda,Siphonophorida,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplopoda,Spirobolida,,Dry mass,M = exp(a + b * log(L)),-4.591,2.543,11,47,"(Gowing & Recher, 1984)",not mentioned,"inferred, Diplopoda"
+Diplura,Heterojapygidae,,Dry mass,M = a * (L)^b,0.034,2.191,0.9,17.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, general"
+,,,,,,,,,,any appendages,arthropod
+Diptera,Larvae,,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+,,,,,,,,,,any appendages,Larvae
+Diptera,Adults,,Dry mass,M = a * (L)^b,0.0153,2.573,1.75,8.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","Group specific,"
+,,,,,,,,,,any appendages,Diptera adult
+Diptera,Agromyzidae,Larvae,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+,,,,,,,,,,any appendages,Larvae
+Diptera,Cecidomyiidae,A / L,Dry mass,M = a * (L)^b,0.035,2.173,0.9,17.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, all insect"
+,,,,,,,,,,any appendages,taxa
+Diptera,Ceratopogonidae,Larvae,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+,,,,,,,,,,any appendages,Larvae
+Diptera,Chironomidae,Larvae,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+Diptera,Drosophilidae,Larvae,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+,,,,,,,,,,any appendages,Larvae
+Diptera,Muscidae,Adult,Dry mass,M = a * (L)^b,0.0153,2.573,1.75,8.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","Group specific,"
+,,,,,,,,,,any appendages,Diptera adult
+Diptera,Mycetophilidae,Larvae,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+,,,,,,,,,,any appendages,Larvae
+Diptera,Phoridae,Adult,Dry mass,M = a * (L)^b,0.0153,2.573,1.75,8.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","Group specific,"
+,,,,,,,,,,any appendages,Diptera adult
+Diptera,Pipunculidae,Larvae,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+,,,,,,,,,,any appendages,Larvae
+Diptera,Sciaridae,Adult,Dry mass,M = a * (L)^b,0.0153,2.573,1.75,8.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","Group specific,"
+,,,,,,,,,,any appendages,Diptera adult
+Diptera,Simuliidae,Adult,Dry mass,M = a * (L)^b,0.0153,2.573,1.75,8.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","Group specific,"
+,,,,,,,,,,any appendages,Diptera adult
+Diptera,Syrphidae,Larvae,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+,,,,,,,,,,any appendages,Larvae
+Diptera,Tachinidae,Adult,Dry mass,M = a * (L)^b,0.0153,2.573,1.75,8.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","Group specific,"
+,,,,,,,,,,any appendages,Diptera adult
+Diptera,Tephritidae,Larvae,Dry mass,M = a * (L)^b,0.029,1.73,1.7,16.65,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, holomet."
+,,,,,,,,,,any appendages,Larvae
+Diptera,Thaumaleidae,A / L,Dry mass,M = a * (L)^b,0.035,2.173,0.9,17.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, all insect"
+,,,,,,,,,,any appendages,taxa
+Gastropoda,All,,Dry mass,M = exp(a + b * log(L*W)),-2.75,1.59,2.1,18,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred,"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),Gastropoda
+Hemiptera,Acanthosomatidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Group specific,"
+,,,,,,,,,,appendages,Hemiptera
+Hemiptera,Anthocoridae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Group specific,"
+,,,,,,,,,,appendages,Hemiptera
+Hemiptera,Aradidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Group specific,"
+,,,,,,,,,,appendages,Hemiptera
+Hemiptera,Ceratocombidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Group specific,"
+,,,,,,,,,,appendages,Hemiptera
+Hemiptera,Cicadellidae,,Dry mass,M = exp(a + b * log(L)),-3.735,2.561,2.13,13.25,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,Group specific
+,,,,,,,,,,appendages,
+Hemiptera,Cimicidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Cydnidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Delphacidae,,Dry mass,M = exp(a + b * log(L)),-2.823,2.225,2.13,13.25,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Inferred,"
+,,,,,,,,,,appendages,Homoptera
+Hemiptera,Dipsocoridae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Enicocephalidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Eurybrachyidae,,Dry mass,M = exp(a + b * log(L)),-2.823,2.225,2.13,13.25,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Inferred,"
+,,,,,,,,,,appendages,Homoptera
+Hemiptera,Hebridae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Hydrometridae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Lophopidae,,Dry mass,M = exp(a + b * log(L)),-2.823,2.225,2.13,13.25,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Inferred,"
+,,,,,,,,,,appendages,Homoptera
+Hemiptera,Lygaeidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Meenoplidae,,Dry mass,M = exp(a + b * log(L)),-2.823,2.225,2.13,13.25,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Inferred,"
+,,,,,,,,,,appendages,Homoptera
+Hemiptera,Membracidae,,Dry mass,M = exp(a + b * log(L)),-2.823,2.225,2.13,13.25,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Inferred,"
+,,,,,,,,,,appendages,Homoptera
+Hemiptera,Mesoveliidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Miridae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Nabidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Pentatomidae,,Dry mass,M = exp(a + b * log(L)),-4.197,3.053,6.35,16.73,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,Group specific
+,,,,,,,,,,appendages,
+Hemiptera,Reduviidae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Schizopteridae,,Dry mass,M = exp(a + b * log(L)),-4.784,3.075,3.2,40.23,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, Hemiptera"
+,,,,,,,,,,appendages,
+Hemiptera,Triozidea,,Dry mass,M = exp(a + b * log(L)),-2.823,2.225,2.13,13.25,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"Inferred,"
+,,,,,,,,,,appendages,Homoptera
+Hymenoptera,Bethylidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Diapriidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Eucoilidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Eupelmidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Figitidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Formicidae,,Dry mass,M = exp(a + b * log(L)),-3.996,2.489,2,18,"(Gowing & Recher, 1984)",not mentioned,Group specific
+Hymenoptera,Mymariidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Scelionidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Specidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Trichogrammatidae,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Hymenoptera,Unidentifiable,,Dry mass,M = exp(a + b * log(L)),-3.336,2.104,1,12,"(Gowing & Recher, 1984)",not mentioned,"inferred, Hym. excl"
+,,,,,,,,,,,Formicidae
+Isopoda,All,,Dry mass,M = exp(a + b * log(L)),-4.81,3.44,2.7,8,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"Group specific,"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),Isopoda
+Isoptera,Rhinotermitidae,,Dry mass,M = e^a * L^b,-5.802,3.177,3.3,5.6,"(Johnson & Strong, 2000)",head to end of abdomen,"inferred, Isoptera"
+Isoptera,Termitidae,,Dry mass,M = e^a * L^b,-5.802,3.177,3.3,5.6,"(Johnson & Strong, 2000)",head to end of abdomen,"inferred, Isoptera"
+Isoptera,Unidentifiable,,Dry mass,M = e^a * L^b,-5.802,3.177,3.3,5.6,"(Johnson & Strong, 2000)",head to end of abdomen,"inferred, Isoptera"
+Lepidoptera,Alucitidae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Arctiidae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Arctiidae,,Dry mass,M = exp(a + b * log(L)),-3.755,2.658,5.05,20.06,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera
+Lepidoptera,Gelechiidae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Geometridae,,Dry mass,M = exp(a + b * log(L)),-5.493,2.625,7.66,29.5,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,",Group specific
+,,,,,,,,,,"ovipositors, wings etc.)",
+Lepidoptera,Hesperiidae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Lasiocampidae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Lymantriidae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Noctuidae,,Dry mass,M = exp(a + b * log(L)),-5.424,2.845,7.96,42.8,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,",Group specific
+,,,,,,,,,,"ovipositors, wings etc.)",
+Lepidoptera,Nolidae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Pterophoridae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Pyralidae,,Dry mass,M = exp(a + b * log(L)),-5.909,2.959,6.26,44.62,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera Larvae
+Lepidoptera,Pyralidae,,Dry mass,M = exp(a + b * log(L)),-5.036,3.122,2.76,40.73,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Lepidoptera
+Mantodea,Mantidae,,Dry mass,M = exp(a + b * log(L)),-6.34,3.01,6,66,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,Group specific
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Neuroptera,Chrysopidae,,Dry mass,M = exp(a + b * log(L)),-4.483,2.57,3.45,54.51,"(Sample, Cooper, Greer, & Whitmore, 1993)","frons to tip of abdomen (excl. antennae,","inferred,"
+,,,,,,,,,,"ovipositors, wings etc.)",Neuroptera
+Opiliones,All,,Fresh mass,M = exp(a + b * log(L)),-0.899,2.984,0.57,6.9,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, Opiliones"
+,,,,,,,,,,opisthosoma (excl spinnerets),
+Orthoptera,Acrididae,,Dry mass,M = exp(a + b * log(L)),-3.17,2.61,2.3,33,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred, Orthoptera"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Orthoptera,Eumastacidae,,Dry mass,M = exp(a + b * log(L)),-3.17,2.61,2.3,33,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred, Orthoptera"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Orthoptera,Gryllidae,,Dry mass,M = exp(a + b * log(L)),-3.17,2.61,2.3,33,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred, Orthoptera"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Orthoptera,Tetrigidae,,Dry mass,M = exp(a + b * log(L)),-3.17,2.61,2.3,33,"(Wardhaugh, 2013)",front of labrum to tip of abdomen (excl. cerci or,"inferred, Orthoptera"
+,,,,,,,,,,ovipositors) or tip of elytra (longest),
+Plecoptera,All,,Dry mass,M = a * L^b,0.0094,2.754,1.95,3.232,"(Benke, Huryn, Smock, & Wallace, 1999)",Total length,Group specific
+Plecoptera,Austroperlidae,,Dry mass,M = a * L^b,0.0094,2.754,1.95,3.232,"(Benke, Huryn, Smock, & Wallace, 1999)",Total length,Group specific
+Plecoptera,Gripopterygidae,,Dry mass,M = a * L^b,0.0094,2.754,1.95,3.232,"(Benke, Huryn, Smock, & Wallace, 1999)",Total length,Group specific
+Plecoptera,Notonemouridae,,Dry mass,M = a * L^b,0.0094,2.754,1.95,3.232,"(Benke, Huryn, Smock, & Wallace, 1999)",Total length,Group specific
+Pseudoscorpionida,All,,fresh mass,M = exp(a + b * log(L)),-1.892,2.515,0.86,2.1,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,Group specific
+,,,,,,,,,,opisthosoma (excl spinnerets),
+Psocoptera,Archipsocidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Caeciliidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Ectopsocidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Elipsocidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Epipsocidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Hemipsocidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Lepidopsocidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Pachytroctidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Psocidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Psyllipsocidae,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Psocoptera,Unidentifiable,,Dry mass,M = a * (L)^b,0.014,3.115,1.5,3.15,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, Psocoptera"
+,,,,,,,,,,any appendages,
+Schizomida,Hubbardiidae,,Fresh mass,M = exp(a + b * log(L)),-2.108,3.017,0.67,36,"(Höfer & Ott, 2009)",edge of prosoma (without chelicerae) to edge of,"inferred, hunting"
+,,,,,,,,,,opisthosoma (excl spinnerets),spiders
+Symphyla,Scutegerillidae,,Dry mass,M = a * (L)^b,0.035,2.173,0.9,17.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, all insect"
+,,,,,,,,,,any appendages,taxa
+Thysanoptera,Aeolothripidae,,Dry mass,M = a * (L)^b,0.035,2.173,0.9,17.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, all insect"
+,,,,,,,,,,any appendages,taxa
+Thysanoptera,Phlaeothripidae,,Dry mass,M = a * (L)^b,0.035,2.173,0.9,17.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, all insect"
+,,,,,,,,,,any appendages,taxa
+Thysanoptera,Thripidae,,Dry mass,M = a * (L)^b,0.035,2.173,0.9,17.6,"(Gruner, 2003)","tip of abdomen to end of head or carapace, excl.","inferred, all insect"
+,,,,,,,,,,any appendages,taxa
+Thysanura,Nicoletiidae,,Dry mass,M = exp(a + b * log(L)),-3.628,2.494,2.13,54.51,"(Sample, Cooper, Greer, & Whitmore, 1993)",From frons to tip of abdomen excluding,"inferred, all insect"
+,,,,,,,,,,appendages,taxa

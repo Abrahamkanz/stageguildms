@@ -1,0 +1,688 @@
+"APPENDIX 1.   Length-mass regression equations based on total body length (unless otherwise indicated in parentheses). Eauations are of the form DM = a Lb,"															
+"where DM = dry mass (mg), L = body length (mm), and a and b are fitted constants. * indicates that ash-free dry mass (AFDM) was used instead of DM; for"															
+"these regressions, % ash content of DM is given. f = female, m = male, and A = adult (Coleoptera only). Other abbreviations (FR, BC, PR; see source paper)"															
+"represent different collection sites. All regressions are significant at p = <0.05. n = number of individuals included in regression, range = range of body lengths"															
+"(mm) included in regression, state = state or province where individuals were collected, source = reference or individual (unpublished): ADH = Alexander D."															
+"Huryn, LAS = Leonard A. Smock, ACB = Arthur C. Benke, JBW = J. Bruce Wallace."															
+Taxon	a - 1 SE	b ± 1 SE	r2	n	Range	Percent ash ± 1 SE			State	Source					
+TURBELLARIA*	0.0056	2.198	0.95	9	2.2-4.7				NC	ADH and JBW					
+Planariidae															
+Cura foremani	0.0101 ± 0.0053	2.162 ± 0.310	0.69	16	1.8-4.2				VA	LAS					
+Dugesia tigrina	0.0089 ± 0.0014	2.145 ± 0.233	0.81	42	2.0-5.2				VA	LAS					
+CRUSTACEA															
+Decapoda															
+Cambaridae															
+Cambarus bartonii*	0.0090 ± 0.0011	3.521 ± 0.050	0.99	33	5.2-38.1			30.6 - 1.6			NC	Huryn and Wallace 1987			
+(carapace)															
+Orconectes luteus (m)	0.0089	3.83	0.93						MO	Rabeni 1992					
+(carapace)															
+Orconectes luteus (f) (carapace)	0.0251	3.38	0.93						MO	Rabeni 1992					
+Orconectes propinquus (m)	0.0041	4.066	0.99	41					MI	Stelzer and Burton 1993					
+(carapace) (FR)															
+Orconectes propinquus (f)	0.0073	3.847	0.98	41					MI	Stelzer and Burton 1993					
+(carapace) (FR)															
+Orconectes propinquus (m)	0.0096	3.753	0.96	28					MI	Stelzer and Burton 1993					
+(carapace) (BC)															
+Orconectes propinquus (f)	0.0307	3.357	0.96	41					MI	Stelzer and Burton 1993					
+(carapace) (BC)															
+Orconectes punctimanus (m)	0.02	3.44	0.96						MO	Rabeni 1992					
+(carapace)															
+Orconectes punctimanus (f)	0.0174	3.44	0.93						MO	Rabeni 1992					
+(carapace)															
+Astacidae															
+Paufastacus leniusculus	0.0084	3.592	0.98						OR	Mason 1975					
+trowbrklgii (m)															
+P leniusculus trowbridgii (f)	0.0251	3.073	0.98						OR	Mason 1975					
+Isopoda															
+Asellidae															
+Caecidotea racovitzai	0.0036 ± 0.0062	3.111 ± 0.274	0.86	29	1.8-10.4				VA	LAS					
+Lirceus lineatus	0.0072 ± 0.0001	2.785 ± 0.033	0.98	125	1.4-11.0				GA	ACB					
+Amphipoda															
+Crangonycrdae															
+Crangonyx gracilus	0.0058 ± 0.0017	2.798 ± 0.142	0.85	25	2.0-9.0				VA	LAS					
+C. richmoruiensis	0.0020 ± 0.0013	3.211 ± 0.265	0.9	30	2.0-13.0				VA	LAS					
+Ganunaridae															
+Gammarus minus	0.012	2.74	0.95						PA	Basset and Glazier 1995					
+G. pseudolimnaeus	0.0049	3.001 ± 0.042	0.99	37					ON	Marchant and Hynes 1981					
+Pontoporeiidae															
+Pontoporeia hoyi	0.001	3.404							ON	Johnson 1988					
+hoyi (shallow)	0.0079	2.929	0.95	407					MI	Winne11 and White 1984					
+hoyi (deep)	0.0067	3.023	0.96	540					MI	Winne11 and White 1984					
+EPHEMEROPTERA															
+Ameletidae															
+Ameletus sp.	0.0077 ± 0.0019	2.588 ± 0.200	0.59	14	2.6-9.6				VA	LAS					
+Baetidae															
+Baetis pygmaeus	0.004	2.378							QC	Lauzon and Harper 1988					
+Baetis sp.*	0.0076 ± 0.0009	2.691 ± 0.010	0.99	8	0.6-6.6	4.9 -± 0.4			NC	ADH and JBW					
+Baetis spp.	0.0068 ± 0.0002	2.72 ± 0.085	0.96	49	2.1-6.2				GA	ACB					
+Baetis spp.	0.0033 ± 0.0002	3.196 ± 0.270	0.81	36	1.8-8.5				NC	Smock 1980					
+Baetis spp.	0.0094 ± 0.0007	2.938 ± 0.266	0.87	52	1.5-6.6				VA	LAS					
+Baetis spp.	0.0075	2.423	0.94	94					NC	Wallace and Gurtz 1986					
+Callibaetis sp.	0.00081 ± 0.00006	3.547 ± 0.402	0.8	21	4.3-8.2				AL	ACB					
+Heterocloeon sp.	0.0052 ± 0.0009	2.721 ± 0.521	0.71	36	1.9-7.5				VA	LAS					
+Pseudocloeon spp.	0.0023 ± 0.0008	3.264 ± 0.532	0.62	22	1.6-5.4				VA	LAS					
+Baetisddae															
+Baetisca sp.	0.0116 ± 0.0010	2.905 ± 0.220	0.78	51	1.9-9.8				GA	ACB					
+Caenidae															
+Caenis diminuta	0.0058 ± 0.0002	2.712 ± 0.140	0.94	25	1.6-4.4				AL	ACB					
+Caenis sp.	0.0069 ± 0.0004	2.610 ±0.170	0.69	14	1.8-6.0				NC	Smock 1980					
+Caenis sp.	0.0054 ± 0.0012	2.842 ± 0.199	0.85	35	1.7-6.4				VA	LAS					
+Caenis sp.	0.0033 ± 0.0003	2.924 ± 0.244	0.9	18	1.4-4.4				SC	ACB					
+Ephemerellidae															
+Drunella sp.	0.0257 ± 0.0025	2.252 ± 0.352	0.62	28	2.4-9.8				VA	LAS					
+Drunella sp.	0.0019	3.46	0.91	256					OR	Hawkins 1986					
+Ephemerella sp.	0.0097 ± 0.0003	2.663 ± 0.104	0.89	84	2.7-8.8				GA	ACB					
+Ephemerella sp.	0.0128 ± 0.0014	2.444 ± 0.266	0.81	46	2.1-7.7				VA	LAS					
+Eurylophella temporalis	0.0080 ± 0.0011	2.663 ± 0.210	0.94	74	1.7-6.1				VA	LAS					
+E. verisimilis	0.0051	2.442							QC	Lauzon and Harper 1988					
+Serratella sp.	0.0088 ± 0.0015	2.584 ± 0.479	0.76	24	2.3-8.0				VA	LAS					
+SerrateIla sp.*	0.0103 ± 0.0010	2.903 ± 0.072	0.99	10	0.6-7.1	4.2	±	0.5	NC	ADH and JBW	1-Dec				
+Ephemeridae											tr1				
+Ephemera sp.*	0.0021 ± 0.0003	2.737 ± 0.079	0.99	14	0.9-22.4	18.8	±	3.2	AL	ADH					
+Hexagenia limbata	0.0025	2.718	0.94						KS	Horst and Marzolf 1975					
+H. limbata	0.0024	2.71	0.98	32					SD/NE	Hudson and Swanson 1972					
+H. munda	0.0062 ± 0.0003	2.891 ± 0.113	0.79	21	3.3-24.6				NC	Smock 1980					
+Heptageniidae	0.0249	2.73	0.98	85					ON	Rowe and Bern!! 1989	tri				
+Epeorus cf. dispar*	0.0121 ± 0.0021	2.667 ± 0.125	0.98	10	0.5-9.1	4.7 ±		0.5	NC	ADH and JBW					
+E. pleuralis*	0.0119 ± 0.0010	2.824 ± 0.058	0.99	14	0.5-9.0	6	±	0.5	NC	ADH and JBW					
+Epeorus sp.	0.0056 ± 0.0020	2.926 ± 0.355	0.55	18	1.3-11.6				VA	LAS					
+Heptagenia sp.	0.0180 ± 0.0010	2.326 ± 0.040	0.72	90	1.3-9.7				NC	Smock 1980					
+Heptagenia sp.	0.0087 ± 0.0005	2.731 ± 0.198	0.95	11	2.8-9.8				GA	ACB					
+Leucrocuta sp.*	0.0110 ± 0.0007	2.761 ± 0.051	1	9	1.5-6.5	9.7	±	1.4	NC	ADH and JBW					
+Nixe sp.*	0.0080 ± 0.0008	2.919 ± 0.079	0.99	9	1.1-5.9	6.4 ±		0.7	NC	ADH and JBW	tri				
+Stenacron carolina*	0.0057 ± 0.0009	2.782 ± 0.102	0.99	10	0.7-10.5	6.9	±	0.8	NC	ADH and JBW					
+S. interpunctatum	0.0067 ± 0.0008	2.807 ± 0.087	0.88	45	1.0-10.9				NC	Smock 1980	0				
+S. meririvulanum*	0.0101 ± 0.0004	2.891 ± 0.021	1	10	0.7-12.3	5.3	±	0.7	NC	ADH and JBW					
+Stenonema modestum	0.0078 ± 0.0002	2.871 ± 0.027	0.88	128	0.8-12.1				NC	Smock 1980					
+S. modestum	0.0101 ± 0.0016	2.636 ± 0.186	0.81	52	1.0-10.7				VA	LAS					
+S. modestum	0.0047	2.819							QC	Lauzon and Harper 1988					
+Stenonema spp.	0.0128 ± 0.0008	2.616 ± 0.151	0.84	59	2.0-12.7				GA	ACB					
+Isonychiidae															
+Isonychia sp.	0.0031 ± 0.0007	3.167 ± 0.023	0.88	107	2.2-13.2				NC	Smock 1980					
+Isonychia spp.	0.0031	2.918	0.97	123	2.6-12.9				GA	Benke and Jacobi 1994					
+Leptophlebiidae															
+Habrophlebia vibrans*	0.0047 ± 0.0006	2.566 ± 0.113	0.99	7	0.9-5.7	6	±	0.7	NC	ADH and JBW					
+H. vibrans	0.0028	2.488							QC	Lauzon and Harper 1988					
+Leptophlebia sp.	0.0054 ± 0.0009	2.836 ± 0.222	0.78	25	1.2-8.4				VA	LAS					
+Paraleptophlebia spp.*	0.0038 ± 0.0006	2.918 ± 0.119	0.99	8	0.9-7.4	7.5	±	0.5	NC	ADH and JBW					
+Paraleptophlebia sp.	0.0061 ± 0.0005	2.624 ± 0.189	0.88	55	1.0-7.8				VA	LAS					
+Polymitarcyidae															
+Ephoron album	0.002	3.05	0.89		5.0-14.08				MB	Giberson and Galloway 1985					
+Siphlonuridae															
+Siphlonisca aerodromia*	0.0002 ± 0.0002	3.610 ± 0.272	0.9	20	6.0-21.0	8.4 ± 0.8			ME	ADH					
+Siphlonurus sp.*	0.0001 ± 0.0000	4.14 ± 0.150	0.96	30	5.4-18.0	4.0 ± 0.8			ME	ADH					
+Tricorythidae															
+Tricorythodes minutus	0.00092		1772		200					ID	McCullough et al. 1979a				
+Tricorythodes sp.	0.0029 ±		0.004	3.165	±	0.253	0.77	19	1.7-7.1				VA	LAS	
+ODONATA															
+Zygoptera															
+Calopterygidae															
+Calopteryx sp.	0.0050 ±		0.0008	2.742 ±		0.222	0.87	25	2.0-16.1				VA	LAS	
+Coenagrionidae															
+Argia spp.	0.0086 ±		0.0018	2.666 ±		0.13	0.83	23	4.1-15.2				NC	Smock	1980
+Ischnura spp.	0.0015	±	0.0001	2.904 ±		0.18	0.96	13	2.9-13.3				SC	ACB	
+Anisoptera															
+Aeshnidae															
+Boyeria vinosa	0.0082 ±		0.0021	2.813 ±		0.087	0.94	11	3.3-35.4				NC	Smock	1980
+Cordulegastridae															
+Cordulegaster maculata	0.0067 ±		0.0012	2.782 ±		0.242	0.81	18	3.2-38.1				VA	LAS	
+Corduliidae															
+Epitheca cynosura	0.0090 ±		0.0004	2.757 ±		0.103	0.94	48	2.5-19.7				SC	ACB	
+E. semiaquae	0.0074 ±		0.0007	2.720 ±		0.359	0.76	17	4.2-29.3				VA	LAS	
+Neurocordulia molesta	0.0124 ±		0.0006	2.884 ±		0.142	0.89	54	3.0-19.0				GA	ACB	
+Gomphidae															
+Dromogomphus sp.	0.0180 ±		0.0016	2.239	±	0.317	0.83	12	8.5-19.0				SC	ACB	
+Gomphus spp.	0.0044 ±		0.0006	3.124 ±		0.297	0.85	9	4.8-26.6				NC	Smock	1980
+"Comphtz :7,.,p."	n nnAn -1-		n nnnk	.7 Rd7		+ n lAR  n 911		74	1 0-17 1				VA	LAS	
+Lanthus vernalis*		0.0097		2.895	0.98	9	0.9-16.0				NC	ADH			
+Progomphus obscurus		0.0057 ± 0.0012		2.831 ± 0.322	0.74	28	3.9-23.0				VA	LAS			
+Libellulidae															
+Celithemis fasciata		0.0058 ± 0.0003		2.877 ± 0.098	0.95	44	2.1-16.3				SC	ACB			
+Erythemis simplicicollis		0.0061 ± 0.0009		3.089 ± 0.411	0.89	9	4.2-12.5				SC	ACB			
+Ladona deplanata		0.0072 ± 0.0003		2.618 ± 0.117	0.94	37	6.5-23.8				SC	ACB			
+Libellula sm.		0.0151 ± 0.0013		2.393 ± 0.262	0.83	19	6.3-16.5				SC	ACB			
+															
+															
+					APPENDIX 1.		Continued.								
+Taxon		a ± 1 SE		b ± 1 SE	r2	n	Range	% ash ± 1 SE  State				Source			
+Plathemis lydia	0.0040 ±	0.0003	3.068 ±	0.285	0.85	22	7.0-18.9				SC	ACB			
+PLECOPTERA															
+Capniidae															
+Allocapnia spp.	0.0047 ±	0.0004	2.761 ±	0.156	0.79	29	1.4-6.7				NC	LAS			
+Allocapnia spp.	0.0057 ±	0.0003	2.439 ±	0.199	0.92	25	1.3-7.0				VA	LAS			
+Allocapnia spp.*	0.0040 ±	0.0006	2.487 ±	0.122	0.98	10	0.7-6.9	4.7	±	1	NC	ADH and JBW			
+Chloroperlidae															
+Sweltsa sp.*	0.0062 ±	0.0019	2.724 ±	0.213	0.95	10	0.7-8.6	3.9	±	1.3	NC	ADH and JBW			
+Leuctridae															
+Leuctra sp.	0.0025 ±	0.0003	2.744 ±	0.1	0.88	34	2.2-7.2				VA	LAS			
+Leuctra sp.*	0.0030 ±	0.0003	2.694 ±	0.065	1	9	0.6-7.7	4.9	±	0.7	NC	ADH and JBW			
+Nemouridae															
+Amphinemura wui*	0.0071 ±	0.0008	2.678 ±	0.084	0.99	9	0.8-65	4.2	±	0.4	NC	ADH and JBW			
+Amphinemura spp.	0.0040 ±	0.0005	2.975 ±	0.178	0.88	62	1.0-6.9				VA	LAS			
+Prostoia completa	0.0055 ±	0.0003	2.633 ±	0.126	0.96	38	0.9-6.2				VA	LAS			
+Peltoperlidae															
+Tallaperla maria		0.0141		2.62	0.89	289					NC	Stout et al. 1993			
+Tallaperla sp.*		0.0194 ± 0.0014		2.853 ± 0.058	1	12	0.6-9.9	2.6	±	0.5	NC	ADH			
+Perlidae															
+Acroneuria abwrmis		0.0061 ± 0.0005		3.000 ± 0.420	0.94	22	4.2-26.1				NC	LAS			
+A. lycorias (FR)		0.0129		2.8	0.97						MI	Eggert and Burton 1994			
+A. lycorias (PR)		0.0101		2.9	0.97						MI	Eggert and Burton 1994			
+Acroneuria spp.		0.0019 ± 0.0001		3.232 ± 0.160	0.89	52	3.4-17.0				GA	ACB			
+Agnetina capitata		0.0144 ± 0.0015		2.688 ± 0.322	0.76	21	3.0-11.2				VA	LAS			
+Beloneuria georgiana*		0.0079 ± 0.0007		2.844 ± 0.050	1	11	1.3-18.7	3.9	±	0.9	NC	ADH and JBW			
+B. georgiana		0.0094 ± 0.0011		2.766 ± 0.262	0.86	31	3.3-19.5				VA	LAS			
+Eccoptura xanthenes		0.0030 ± 0.0003		3.232 ± 0.185	0.96	18	5.8-20.0				NC	LAS			
+Neoperla clymene		0.0429 ± 0.0051		1.950 ± 0.356	0.67	17	3.8-14.0				GA	ACB			
+Paragnetina kansensis		0.0093 ± 0.0006		2.797 ± 0.167	0.82	63	4.0-22.0				GA	ACB			
+Perlesta placida		0.0030 ± 0.0001		3.020 ± 0.143	0.85	83	3.7-10.2				GA	ACB			
+Perlesta sp.		0.0037 ± 0.0003		3.080 ± 0.150	0.81	15	2.5-11.5				NC	Smock 1980			
+Perlinella drymo		0.0034 ± 0.0003		3.123 ± 0.203	0.81	18	3.3-16.9				VA	LAS			
+Perlodidae															
+Clioperla clio		0.0037 ± 0.0002		2.931 ± 0.213	0.83	26	2.4-13.2				NC	LAS			
+C. clio		0.0054 ± 0.0005		2.762 ± 0.290	0.77	50	2.9-14.3				VA	LAS			
+															
+															
+					APPENDIX L		Continued.								
+Taxon		a ± 1 SE		b ± 1 SE	r2	n	Range	°A. ash ± 1 SE  State				Source			
+Isogenus group		0.0080 ± 0.0004		2.706 ± 0.143	0.85	32	2.2-15.1				NC	Smock 1980			
+Isoperla bilineata		0.0076 --. 0.0006		2.601 - 0.366	0.81	33	1.7-13.4				VA	LAS			
+Isoperla spp.*		0.0100 ± 0.0021		2.658 ± 0.131	0.98	10	0.9-12.3	2.7 ±		0.06	NC	ADH and JBW			
+Kogotus nonus (thorax)		0.09		2.84	0.94	150					AB	"Wn1,-le and nay:- 1 007"			
+Malirekus hastatue	0.0119	-	0.0045	2.695	±	0.205	0.97	7	2.1-20.9	3.1	±	0.5	NC	ADH and JBW	
+Pteronarcyidae															
+Pteronarcys dorsata	0.0064 ±		0.0005	2.845	±	0.165	0.9	36	8.6-34.9				GA	ACB	
+I? scotti*	0.0538	-	0.0123	2.3	±	0.145	0.87	40	13.0-44.0	7.8	±	0.6	NC	JBW	
+Taeniopterygidae															
+Strophopteryx limata*	0.0095	-	0.0023	2.567 -±		0.179	0.97	8	1.0-8.6	5.7 ±		0.7	NC	ADH and JBW	
+Strophopteryx sp.	0.0043	±	0.0004	2.790 ±		0.322	0.71	26	1.5-7.8				VA	LAS	
+Taeniopteryx lita	0.0079	±	0.0005	2.55	±	0.238	0.89	16	1.6-4.2				GA	ACB	
+Taeniopteryx spp.	0.0067 ±		0.0005	2.711	±	0.331	0.8	44	1.8-8.5				NC	LAS	
+HEMIPTERA															
+Corixidae															
+Sigara sp.	0.0031	±	0.0002	2.904	±	0.157	0.81	14	3.4-6.8				NC	Smock	1980
+Gerridae															
+Gerris remigis	0.0150 ±		0.0011	2.596	±	0.15	0.79	15	9.0-17.5				NC	Smock	1980
+Veliidae															
+Metrobates hesperius	0.0169	±	0.0007	2.66	±	0.113	0.83	25	3.2-5.5				NC	Smock	1980
+Rhagovelia obesa	0.0083	±	0.0006	2.777	±	0.133	0.74	21	2.8-4.8				NC	Smock	1980
+MEGALOPTERA															
+Corydalidae															
+Corydalus cornutus	0.0018 ±		0.0002	3.001	±	0.174	0.94	41	17.3-69.2				NC	LAS	
+C. cornutus	0.0032	±	0.0004	2.953	±	0.155	0.81	21	12.4-77.1				VA	LAS	
+C. cornutus	0.0018	±	0.0001	2.997	±	0.079	0.95	82	2.4-62.0				GA	ACB	
+Nigronia serricornis	0.0062 ±		0.0007	2.691	±	0.184	0.88	34	12.2-40.0				NC	LAS	
+N. serricornis	0.0053	±	0.0004	2.721	±	0.252	0.79	26	9.4-43.5				VA	LAS	
+Sialidae															
+Sialis aequalis	0.0043	±	0.0005	2.704	±	0.344	0.76	36	3.4-20.2				VA	LAS	
+Sialis sp.	0.0031	±	0.0002	2.801	±	0.202	0.88	25	5.1-21.3				NC	LAS	
+TRICHOPTERA															
+Brachycentridae															
+															
+															
+					APPENDIX 1.		Continued.								
+Taxon		a ± 1 SE		b ± 1 SE	r2	n	Range	% ash ± 1 SE  State				Source			
+Brachycentrus etowahensis		0.0025 ± 0.0008		3.443 ± 0.037	0.98	224	2.0-13.0	11.7	±	0.5	GA	JBW			
+Brachycentrus sp.		0.0025 ± 0.0005		2.600 ± 0.421	0.66	26	2.2-10.4				VA	LAS			
+Micrasema sp.*		0.0181 ± 0.0019		2.410 ± 0.087	0.97	22	1.0-5.4	7.2	±	0.6	AL	ADH			
+Glossosomatidae															
+Glossosoma nigrior *		0.0065		3.028	0.98	61	0.7-6.3				AL	Jin 1995			
+Glossosoma sp.*		0.0092 ± 0.0015	2.888	± 0.134	0.96	20	1.2-5.8	6.6	±	0.5	AL	ADH			
+Helicopsychidae															
+Helicopsyche sp.*		0.0120 ± 0.0014	3.096	± 0.129	0.96	28	1.3-4.3	4.3	±	1.2	AL	ADH			
+(case width)															
+Hydropsychidae															
+Cheumatopsyche spp.		0.0049 ± 0.0006	2.62	± 0.308	0.69	58	1.4-12.0				NC	LAS			
+Cheumatopsyche spp.		0.0045 ± 0.0005	2.721	± 0.300	0.83	47	1.1-11.8				VA	LAS			
+Hydropsyche elissoma		0.0058 ± 0.0003	2.491	± 0.143	0.93	26	2.4-10.0				GA	ACB			
+H. incommoda		0.00053 ± 0.00003	4.179	± 0.179	0.9	43	2.6-9.0				GA	ACB			
+H. occid-nta!is		41		2970	n 69	sn					ID	McCullough et al. 1979b			
+H. sparna*	0.0074	±	0.001	2.666	±	0.073	0.99	20	1.0-14.4	10.7	±	0.6	AL	ADH	
+Hydropsyche spp.	0.0051	±	0.0007	2.824	±	0.289	0.79	122	1.6-15.1				NC	LAS	
+Hydropsyche spp.	0.006	±	0.0009	2.708	±	0.323	0.71	36	1.3-14.3				VA	LAS	
+Macrostemum carolina	0.0026	±	0.0003	3.117	±	0.263	0.88	16	1.8-15.0				NC	LAS	
+M. carolina	0.0039	±	0.0003	2.966	±	0.217	0.73	71	4.0-13.5				GA	ACB	
+Lepidostomatidae															
+Lepidostoma sp.	0.0079	±	0.0009	2.649	±	0.135	0.78	33	1.0-9.1				VA	LAS	
+Leptoceridae															
+Oecetis spp.	0.0034	±	0.0006	3.212	±	0.251	0.71	23	1.2-8.0				VA	LAS	
+Limnephilidae															
+lronoquia parvula	0.0041	±	0.0004	2.933	±	0.199	0.61	18	2.5-17.3				VA	LAS	
+Limnephilus sp.*	0.0015	±	0.0008	3.115	±	0.214	0.87	32	5.6-19.2	10.7	±	0.9	ME	ADH	
+Pycnopsyche luculenta	0.0052	±	0.0003	2.832	±	0.111	0.92	47	2.8-17.9				VA	LAS	
+P scabripennis	0.0049	±	0.0003	2.85	±	0.282	0.87	27	3.1-23.8				VA	LAS	
+Odontoceridae															
+Psilotreta sp.	0.0082	±	0.001	2.735	±	0.2	0.76	18	1.5-13.0				VA	LAS	
+Psilotreta sp.*	0.0064	±	0.0008	3.241	±	0.091	0.99	19	0.9-9.1	11.3	±	2.1	AL	ADH	
+Philopotamidae															
+Chimarra sp.	0.0049	±	0.0008	2.48	±	0.205	0.78	34	1.6-10.2				NC	LAS	
+Chimarra sp.	0.005	±	0.0009	2.401	±	0.598	0.64	29	1.8-9.4				VA	LAS	
+Chimarra so.*	0.0044	±	0.0006	2.652	±	0.092	0.97	27	0.8-11.2	12.1	±	1.5	AL	ADH	
+															
+															
+					APPENDIX 1.		Continued.								
+Taxon		a ± 1 SE		b ± 1 SE	r2	n	Range	% ash ± 1 SE  State				Source			
+Phryganeidae															
+Ptilostomis sp.	0.0054 ± 0.0007			2.811 ± 0.426			0.74	20	3.8-28.2				VA	LAS	
+Polycentropodidae															
+Neureclipsis sp.	0.0023 ± 0.0002			2.879 ± 0.499			0.61	23	6.0-11.5				GA	ACB	
+Polycentropus spp.	0.0071 ± 0.0015			2.531 ± 0.647			0.62	25	3.1-14.2				VA	LAS	
+Psychomyiidae															
+Lype diversa	0.0039 ± 0.0008			2.873 ± 0.210			0.85	28	3.3-14.1				VA	LAS	
+Rhyacophilidae															
+Rhyacophila spp.	0.0099 ± 0.0012			2.480 ± 0.385			0.77	32	3.3-16.6				VA	LAS	
+Sericostomatidae															
+Agarodes libalis	0.0074 ± 0.0009			2.741 ± 0.384			0.83	41	3.0-15.0				VA	LAS	
+LEPIDOPTERA															
+Pyralidae															
+Petrophila sp.*	0.0027 ± 0.0005			2.918 ± 0.126			0.97	20	1.8-10.1	17.7 ± 1.8			AL	ADH	
+COLEOPTERA															
+Chrysomelidae															
+Galerucella nymphaeae	0.0392 ± 0.0132			3.111 ± 0.152			0.96	18	0.9-4.1	7.1 ± 0.3			GA	JBW	
+Dytiscidae															
+Hydroporus spp. (A)	0.0618 ± 0.0044			2.502 ± 0.177			0.71	42	3.1-6.5				NC	Smock	1980
+Elmidae															
+Ancyronyx variegata	0.0034 ± 0.0003			3.091 ± 0.286			0.88	37	1.5-4.0				VA	LAS	
+Macronychus glabratus	0.0181 ± 0.0023			2.311 ± 0.241			0.71	38	1.6-3.7				NC	LAS	
+M. vlabratus	0.0052 ± 0.0008			1903 ± 0185			1179	Szt	14-39				VA	TA	
+Optioservus sp.*	0.0039	2.96	0.96	8	1.1-3.4			NC	ADH						
+Promoresia sp.	0.0025 ± 0.0007	3.521 ± 0.278	0.9	19	1.2-3.9	9.2 ± 2.3		AL	ADH						
+Stenelmis spp.	0.0111 ± 0.0115	2.490 ± 0.154	0.83	46	1.8-3.5			NC	LAS						
+Gyrinidae															
+Dineutes sp. (A)	0.0531 ± 0.0031	2.586 ± 0.210	0.67	41	11.0-17.2			NC	Smock	1980					
+Haliplidae															
+Pdtodytes sexmaculatus (A)	0.0271 ± 0.0020	2.744 ± 0.151	0.76	17	4.4-6.0			NC	Smock 1980						
+Psephenidae															
+Ectopria sp.*	0.0164	2.929	0.99	7	0.6-5.2			NC	ADH						
+Psephenus sp.*	0.0077 ± 0.0012	2.883 ± 0.122	0.95	29	1.2-8.4	5.5 ± 1.5		AL	ADH						
+Ptilodactylidae															
+															
+															
+					APPENDIX 1.		Continued.								
+Taxon		a ± 1 SE		b ± 1 SE	r2	n	Range	% ash ± 1 SE  State				Source			
+Anchytarsus bicolor*		0.0011 ± 0.0003		3.100 ± 0.139	0.95	25	1.6-15.2	9.3 ± 2.1			AL	ADH			
+DIPTERA															
+Athericidae															
+Atherix sp.*		0.0038 ± 0.0022		2.586 ± 0.279	0.79	24	3.3-15.8	4.8 :1- 0.3			AL	ADH			
+Blephariceridae															
+Blepharicera sp.*		0.0064 ± 0.0015		3.292 ± 0.188	0.98	8	0.9-4.7	4.3 ± 0.6			AL	ADH			
+Ceratopogortidae		0.00022 ± 0.00003		2.871 ± 0.255	0.91	15	2.2-10.8				AL	ACB			
+Palpomyia spp. group		0.0033 ± 0.0002		2.392 ± 0.163	0.66	18	1.0-7.3				NC	Smock 1980			
+Palpomyia spp. group		0.0039 ± 0.0007		2.144 ± 0.531	0.71	33	1.4-7.0				VA	LAS			
+Chironomidae*		0.0006		2.77	0.86	91	0.9-12.1				NC	ADH			
+Chironominae		0.0059 ± 0.0009		2.099 ± 0.235	0.88	50	1.7-10.8				VA	LAS			
+Chironotninae/Orthocladiinae		0.0051 ± 0.0004		2.322 ± 0.124	0.88	61	1.8-7.3				NC	Smock 1980			
+Chironomini		0.0007 ± 0.00009		2.952 ± 0.118	0.93	51	1.0-6.7				AL	ACB			
+Chironomus decorus		0.00083		2.86	0.96	105					CA	Maier et al. 1990			
+Chironomus spp.		0.00068 ± 0.00004		2.620 ± 0.112	0.96	26	2.0-13.7				AL	ACB			
+Cladopelma sp.		0.0010 ± 0.00008		2.606 ± 0.189	0.94	15	1.0-4.6				AL	ACB			
+Dicroterirlipes sp.		0.00059 ± 0.00005		3.142 ± 0.312	0.87	17	2.6-6.7				AL	ACB			
+Polypedilum spp.		0.0010 ± 0.00005		2.761 ± 0.110	0.98	18	1.3-5.7				AL	ACB			
+Tanytarsini		0.0008 ± 0.0012		2.728 ± 0.197	0.67	45	1.3-5.3				VA	LAS			
+Tanytarsus spp.		0.0012 ± 0.00013		2.294 ± 0.317	0.81	14	1.6-5.8				AL	ACB			
+Orthocladiinae		0.0020 ± 0.0006		2.254 ± 0.396	0.74	39	1.6-5.0				VA	LAS			
+Tanypodinae		0.0026 ± 0.0005		2.503 ± 0.458	0.81	46	2.3-8.2				VA	LAS			
+Tanypodinae		0.0038 ± 0.0006		2.411 ± 0.130	0.85	12	2.0-9.0				NC	Smock 1980			
+Ablabesmyia sp.		0.0010 ± 0.00009		2.884 ± 0.166	0.94	20	0.8-7.5				AL	ACB			
+Procladius bellus		0.0012		2.597		123					ON	Sephton and Paterson 1986			
+Procladius spp.		0.00077 ± 0.00006		2.693 ± 0.154	0.91	32	1.0-9.8				AL	ACB			
+Empididae		0.0066 ± 0.0010		2.436 ± 0.434	0.69	16	1.6-8.0				VA	LAS			
+Empididae*		0.0040 ± 0.0015		2.655 ± 0.261	0.93	9	1.4-9.9	2.5 ± 0.6			NC	ADH and JBW			
+Sciaridae		0.0040 ± 0.0013		2.091 ± 0.218	0.94	7	1.5-7.4	4.9 i 0.8			NC	ADH and JBW			
+Simuliidae		0.0048 ± 0.0007		2.550 ± 0.132	0.72	26	1.6-7.7				NC	Smock 1980			
+Prosimulium mixtum/		0.0012 ± 0.0002		3.190 ± 0.080	0.94	612					MI	Merritt et al. 1982			
+fuscum															
+Simulium decorum		0.00119 ± 0.00059		2.692 ± 0.303	0.89	15					QC	Morin et al. 1988			
+S. tuberosum		0.00025 ± 0.00013		3.342 ± 0.093	0.95	70					QC	Morin et al. 1988			
+S. venustum verecundum		0.00055 ± 0.00012		3.036 ± 0.081	0.98	38					QC	Morin et al. 1988			
+															
+															
+					APPENDIX 1.   Continued.										
+Taxon		a ± 1 SE		b ± 1 SE		r2	n	Range			% ash ± 1 SE  State				Source
+Simu/ium spp.*		0.0031		2.64		0.9	24							GA	Edwards and Meyer 1987
+Simulium spp*		0.0040 ± 0.0005		2.807 ± 0.122		0.99	9	0.7-5.2			7.9 ± 0.7			NC	ADH and JBW
+Stegopterna mutata		0.00042 ± 0.00011		3.830 ± 0.140		0.94	169							MI	Merritt et al. 1982
+Tabanidae															
+Chrysops / Tabanus spp.		0.0050 ± 0.0006		2.591 ± 0.105		0.81	20	1.9-16.4						VA	LAS
+Tipulidae															
+Dicranota sp.*		0.0027 ± 0.0007		2.637 ± 0.164		0.97	9	1.2-9.2			3.4 ± 0.6			NC	ADH and JBW
+Hexatoma spp.*		0.0042 ± 0.0007		2.596 ± 0.108		0.97	19	1.0-12.6			3.0 ± 0.3			NC	ADH and JBW
+Lipsothrix sp.*		0.0006 ± 0.0006		2.745 ± 0.388		0.92	5	2.8-16.0			3.5 ± 1.1			NC	ADH and JBW
+Molophilus sp.*		0.0016 ± 0.0005		2.914 ± 0.194		0.97	8	1.2-95			5.3 ± 2.0			NC	ADH and JBW
+Pedicia sp.'		0.0013 ± 0.0005		2.851 ± 0.221		0.96	8	2.2-16.0			3.5 ± 0.6			NC	ADH and JBW
+Pilaria sp.'		0.0014 ± 0.0003		2.667 ± 0.124		0.98	8	2.6-11.1			2.4 ± 0.2			NC	ADH and JBW
+Tipula abdominalis		0.0015 ± 0.0002		2.810 ± 0.190		0.88	27	4.0-31.1						VA	LAS
+T abdominalis		0.0054 ± 0.0003		2.463 ± 0.133		0.92	36	4.3-38.1						NC	LAS
+Tipula sp.'		0.0064 ± 0.0034		2.443 ± 0.199		0.95	9	4.3-28.3			4.5 ± 0.6			NC	ADH and 113W
+															
+															
+APPENDIX 2.   Length-mass regression eauations for Mollusca based on shell length or width. Equations are of the form DM = a Lb. where DM = dry mass of															
+"soft tissue (mg), L = maximum shell length (mm), and a and b are fitted constants. W indicates that maximum shell width was used instead of shell length. AW"															
+indicates that maximum shell width at aperture was used instead of shell length. * indicates that ash-free dry mass (AFDM) was used instead of DM; for these															
+"regressions, % ash content of DM (soft tissue) and % ash of total mass (including shell) are given. Sampling seasons are indicated by sum. = summer and spr."															
+"= spring. All other numbers or acronyms represent different collection sites (e.g., 10A, 10B; see source papers). For Elimia species, AG = Alligator Creek, CH ="															
+"Choccolocco Creek, HM = Hendrick Mill Branch, MA = Marys Creek, RO = Rocky Branch, TE = Terrapin Creek; Elimia equations are revised from Huryn et"															
+al. (19941. All regressions are significant at p = <0.05. n = number of individuals included in regression. range = range of body lengths (mm) included in															
+"regression, state = state or province where individuals were collected, source ="					reference or individual (unpublished): ADH					"= Alexander D. Huryn, LAS ="					
+"Leonard A. Smock, ACB = Arthur C. Benke."															
+						% ash		% ash							
+							± 1 SE	±-1 SE			rri				
+Taxon	a ± 1 SE	b ± 1 SE	r2	n	Range		(soft)	(+ shell)	State	Source					
+											i				
+BIVALVIA											rri				
+Corbiculidae															
+Corbicula fuminea	0.0204	2.45	0.91	185					GA	Stites et al. 1995	M				
+C. fuminea	0.0055	3.18	0.99	66					GA	Sickel 1976	tr1				
+C. fuminea	0.0078	3.12	0.99	20					TX	Aldridge and McMahon 1978  ZC)					
+C. fuminea (spr.)*	0.0089	3.34	0.97	26					CA	Foe and Knight 1985					
+C. fuminea (sum.)*	0.0058	3.45	0.99	18					CA	Foe and Knight 1985	I				
+C. fuminea (spr.)	0.0141	3.01	0.97	21					NC	Lauritsen and Mozley 1983					
+C. fuminea (sum.)	0.0209	2.77	0.87	35					NC	Lauritsen and Mozley 1983	cn				
+Sphaeriidae											x				
+Pisidium sp.	0.0163 ± 0.0013	2.477 ± 0.187	0.87	104	1.7-10.3				VA	LAS	ni				
+Unionidae											",-i"				
+Amblema plicata (10A)	0.0144	2.782	0.96						IA/WI  Hornbach et al. 1996		0				
+A. plicata (10B)	0.0102	2.852	0.95						IA/WI  Hornbach et al. 1996		Z				
+A. plicata (11)	0.0041	3.042	0.97						IA/WI  Hornbach et al. 1996		c.)				
+A. plicata (14)	0.0086	2.863	0.96						IA/IL	Hornbach et al. 1996	7				
+A. plicata (17)	0.0028	3.133	0.96						IA/IL	Hornbach et al. 1996					
+A. plicata (18)	0.0052	2.972	0.96						IA/IL	Hornbach et al. 1996					
+A. plicata (19U)	0.0055	2.992	0.89						IA/IL	Hornbach et al. 1996					
+A. plicata (19L)	0.0009	3.394	0.89						IA/IL	Hornbach et al. 1996					
+A. plicata (24)	0.0166	2.741	0.7						MO/IL	Hornbach et al. 1996					
+A. plicata (25)	0.0091	2.854	0.95						MO/IL	Hornbach et al. 1996					
+A. plicata (26)	0.0179	2.724	0.44						MO/IL	Hornbach et al. 1996					
+A. plicata (10A)*	0.0236	2.618	0.95						IA/WI	Hornbach et al. 1996					
+A. plicata (10B)*	0.0194	2.64	0.96						IA/WI	Hornbach et al. 1996	"c.,..)"				
+A. plicata (11)*	0.0068	2.842	0.98						IA/WI	Hornbach et al. 1996	(xi				
+															
+															
+					APPENDIX 2.   Continued.										
+								% ash			% ash				
+									SE		±1 SE				
+Taxon		a ± 1 SE		b 1 SE	r2	n	Range	(soft)			(+ shell)			State	Source
+A. plicata (14)*		0.0205		2.588	0.95									IA/IL	Hornbach et al. 1996
+A. plicata (17)*		0.0146		2.685	0.95									IA/IL	Hornbach et al. 1996
+A. plicata (18)*		0.03		2.489	0.93									IA/IL	Hombach et al. 1996
+A. plicata (19U)*		0.0123		2.749	0.84									IA/IL	Hornbach et al. 1996
+A. plicata (19L)*		0.0037		2.992	0.9									IA/IL	Hornbach et al. 1996
+A. plicata (24)*		0.2033		2.091	0.72									MO! IL	Hornbach et al. 1996
+A. plicata (25)*		0.0124		2.702	0.95									MO! IL	Hornbach et al. 1996
+A. plicata (26)*		0.0638		2.358	0.5									MO! IL	Hornbach et al. 1996
+Anodonta cataracta (ML)		0.0038		2.915 ± 0.094		154	10-100							NB	Cameron et al. 1979
+A. cataracta (LL)		0.0142		2.729 ± 0.059		249	20-120							NS	Cameron et al. 1979
+A. grandis simpsoniana		0.00042		3.42 ± 0.044		170	18-80							AB	Hanson et al. 1988
+Elliptio complanata		0.0023		3.156	0.97	67	22-104							VA	Balfour and Smock 1995
+E. cornplanata		0.0067		2.770 ± 0.089	0.94	281	Oct-80							NB	Cameron et al. 1979
+Lampsilis ochracea		0.0075		2.931 ± 0.148		186								NB	Cameron et al. 1979
+GASTROPODA															
+Pleuroceridae															
+Elimia cahawbensis* (AW)		0.0331 ± 0.0026		2.851 ± 0.042	0.99	49	0.6-10.7	16.2	±	2.1	90.3	±	0.3	AL	ADH
+(HM)															
+E. cahawbensis* (HM)		0.0037 ± 0.0011		3.320 ± 0.126	0.96	30	2.7-14.6							AL	ADH
+E. cahawbensis* (AW) (AG)		0.0238 ± 0.0016		3.091 ± 0.038	0.99	51	0.8-11.7	29.7	-	3.6	92	±	0.3	AL	ADH
+E. cahawbensis* (AG)		0.0033 ± 0.0005		3.232 ± 0.065	0.99	30	4.6-20.2							AL	ADH
+E. cahawbensis* (AW) (RO)		0.0324 ± 0.0029		3.074 ± 0.052	0.99	50	0.8-12.3	15.1	±	1.5	89.1	±	0.4	AL	ADH
+E. cahawbensis* (RO)		0.0074 ± 0.0019		3.022 ± 0.111	0.96	30	1.9-19.3							AL	ADH
+E. carinifera* (AW) (HM)		0.0701 ± 0.0069		2.420 ± 0.059	0.97	56	0.2-11.2	14	±	1.6	92.5	±	0.4	AL	ADH
+E. carinifera* (HM)		0.0055 ± 0.0018		2.761 ± 0.131	0.94	30	2.2-21.3							AL	ADH
+E. clavaeformis* (W)		0.0123		3.984	0.96	50								TN	Rosemond et al. 1993
+E. fascinans* (AW)(CH)		0.0224 ± 0.0021		3.051 ± 0.049	0.98	61	0.7-12.7	16.9	±	2	93	±	0.3	AL	ADH
+E. fascinans* (CH)		0.0203 ± 0.0030		2.521 ± 0.069	0.97	36	1.0-21.7							AL	ADH
+E. fascinans* (AW) (MA)		0.0229 ± 0.0028		3.013 ± 0.066	0.98	52	0.8-11.3	19.1	±	2.4	93.5	±	0.3	AL	ADH
+E. fascinans* (AW) (TE)		0.0248 ± 0.0032		2.971 ± 0.068	0.97	51	0.8-12.3	21.5	±	2.8	93.9	±	0.3	AL	ADH
+E. variata* (AW) (AG)		0.0247 ± 0.0025		2.994 ± 0.057	0.98	52	0.8-12.8	18.3	±	3	93.2	±	0.3	AL	ADH
+E. variata* (AG)		0.0058 ± 0.0012		3.151 ± 0.095	0.97	30	2.7-17.2							AL	ADH
+															
+															
+"Arepninix 3    Length-mass regression equations based on head width. Equations are of the form DM = a HIV', where DM = dry mass (mg), HW = head"															
+"width (mm), and a and b are fitted constants. * indicates that ash-free dry mass (AFDM) was used instead of DM. Where indicated, the following are substituted"															
+"for HW:HL = head length, TW = telson width, IOW = interocular width, PW = pronotal width (all units are mm). Other abbreviations represent different"															
+"cnilipctinn pre,-)  All rPgrPqQinnQ Are significant at p = <0 n = number of individuals included in regression. range = range of head widths"															
+"(or otherwise) included in regression, state = state or province where individuals were"					"collected,"	source = reference or individual (unpublished): ADH =									
+"Alexander D. Huryn, LAS = Leonard A. Smock, ACB = Arthur C. Benke, JBW = J. Bruce Wallace."															
+Taxon	a ± 1 SE	b ± 1 SE			Range	% ash ± 1 SE  State				Source					
+CRUSTACEA															
+Isopoda															
+Asellidae															
+Caecidotea obtusus (TW)	0.139	2.8	0.99						GA  Martien and Benke 1977						
+C. racovitzai	0.6525 ± 0.0711	3.001 ± 0.565	0.92	25	0.3-2.0				VA	LAS					
+Lirceus lineatus (TW)	0.1932 ± 0.0044	2.791 ± 0.049	0.96	125	0.4-3.7				GA	ACB					
+Amphipoda															
+Crangonyctidae															
+Crangonyx gracilus (HL)	3.076	3.9	0.98						GA  Martien and Benke 1977						
+C. richmondensis	1.091	3.891			0.5-1.4				BC	Mathias 1971					
+occidentalis (HL)															
+Crangonyx spp. (HL)	0.9394 ± 0.1870	4.720 ± 0.423	0.88	25	0.3-1.7				VA	LAS					
+Gammaridae															
+Gammarus lacustris (HL)	1.102	4.13			0.5-2.2				NT  Jorgenson et al. 1992						
+Hyalellidae															
+Hyalella azteca (HL)	0.948	2.578	0.86	88					ON  France 1993						
+H. azteca (HL)	1.774	3.266			0.3-1.0				BC  Mathias 1971						
+H. azteca (HL)	1.4134	2.839	0.89	40	0.2-0.7				AL  Pickard and Benke 1996						
+EPHEMEROPTERA															
+Amelitidae															
+Ameletus sp.	0.9621 ± .02894	2.900 ± 0.755	0.58	14	0.5-1.9				VA	LAS					
+Baetidae															
+Baetis bicaudatus	0.815	3.349	0.89	66					CO  Allan 1984						
+Baetis spp.	1.2688 ± 0.0414	3.326 ± 0.107	0.96	49					GA  Benke and Jacobi 1994						
+Baetis spp.	1.028 ± 0.2664	3.104 ± 0.533	0.61	36	0.3-1.6				NC  LAS						
+Baetis spp.	0.9832 ± 0.1785	3.246 ± 0.931	0.58	52	0.2-1.4				VA	LAS					
+Callibaetis sp.	0.5058 ± 0.0278	3.451 ± 0.268	0.9	21	0.7-1.4				AL	ACB					
+Heterocloeon sp.	0.9208 ± 0.1222	3.659 ± 1.201	0.66	36	0.3-1.8				VA	LAS					
+Pseudocloeon spp.	0.9422 ± 0.2559	3.444 ± 0.966	0.68	22	0.2-1.0				VA	LAS					
+Baetiscidae											co.)				
+															
+															
+			APPENDIX 3.	Continued.							Z1.5				
+Taxon	a ± 1 SE		b ± 1 SE	r2	n	Range	% ash ± 1 SE			State		Source			
+Baetisca sp.	0.3240 ± 0.313		3.461 ± 0.294	0.74	51	0.7-2.6				GA	ACB				
+Caenidae															
+Caenis dim inuta	0.2667 ± 0.0128		2.764 ± 0.100	0.96	30	0.1-1.1				AL	ACB				
+Caenis sp.	0.7293 - 0.2008		3.109 - 0.815	0.64	14	0.3-1.2				NC	LAS				
+Caenis sp.	0.8642 ± 0.1899		3.011 ± 0.268	0.63	35	0.2-1.4				VA	LAS				
+Ephemerellidae															
+Drumlin ralnralioncic	O4(1		1 47A	0 94	46					CO	Allan 19F44				
+Drunella sp.	1.2840 ± 0.3692	2.960 ± 0.656	0.6	28	0.3-1.8				VA	LAS					
+Drunella spp.	0.434	3.62	0.92	256					OR	Hawkins 1986					
+Ephemerella sp.	0.5481 ± 0.1545	3.303 ± 0.728	0.56	46	0.2-1.6				VA	LAS					
+Ephemerella spp.	0.584 ± 0.0196	3.592 ± 0.154	0.86	85	0.7-1.8				GA	ACB					
+Eurylophella temporalis	0.9336 ± 0.2000	3.122 ± 0.287	0.86	74	0.2-1.5				VA	LAS					
+Serratella sp.	0.7255 ± 0.2626	3.325 ± 0.525	0.72	24	0.3-1.6				VA	LAS					
+Heptageniidae															
+Cinygmula sp.	0.182	2.886	0.83	43					CO  Allan 1984						
+Epeorus longimanus	0.06	4.111	0.92	36					CO  Allan 1984						
+Epeorus sp.	0.1321 ± 0.0374	3.303 ± 0.565	0.81	18	0.3-3.8				VA	LAS					
+Heptagenia sp.	0.1610 ± 0.0121	3.134 ± 0.277	0.93	11	1.0-2.8				GA	ACB					
+Stenacron interpunctatum	0.1099 ± 0.0211	3.569 ± 0.318	0.9	45	0.3-3.6				NC	LAS					
+Stenonema modestum	0.1824 ± 0.0193	3.221 ± 0.230	0.98	128	0.3-4.1				NC	LAS					
+S. modestum	0.1116 ± 0.0245	3.358 ± 0.464	0.74	52	0.4-3.8				VA	LAS					
+Stynnnyma srp	0 1 fl17 ÷ 0 0115	1 015  ÷  0 170	0 91	17	0 fl-1 1				(IA	RnnIn and jaenlai 1994					
+Isonychiidae															
+Isonychia bicolor	0.7879		3.915	0.99	40					MO  Sullivan and Topping 1984					
+Isonychia sp.	0.8390 ± 0.3202		3.421 ± 0.348	0.66	107	0.4-2.0				NC  LAS					
+Isonychia spp.	0.551		3.268 ± 0.219	0.96	123	0.5-2.0				GA  ACB					
+Leptophlebiidae															
+Leptophlebia sp.	0.4571 ± 0.0961		3.724 ± 0.761	0.81	25	0.4-2.2				VA	LAS				
+Paraleptophlebia sp.	0.5264 ± 0.2777		3.038 ± 0.558	0.76	55	04-1.7				VA	LAS				
+Siphlonuridae															
+Siphlonisca aerodromia*	0.2830 ± 0.0528		3.982 ± 0.337	0.88	20	0.9-2.6	8.4	±	0.8	ME  ADH					
+Siphlonura sp.*	0.2361 ± 0.0285		4.244 ± 0.220	0.93	30	0.8-2.7	4	±	0.8	ME  ADH					
+Tricorythidae															
+Tricorythodes sp.	0.7777 ± 0.1767		3.252 ± 0.483	0.81	19	0.3-1.4				VA	LAS				
+ODONATA															
+															
+															
+			APPENDIX 3.   Continued.												
+Taxon	a _ 1 SE	b ± 1 SE	r2	n	Range	% ash ± 1 SE   State				Source					
+Zygoptera															
+Calopterygidae															
+Calopteryx sp.	0.3828 ± 0.0821	2.488 ± 0.400	0.87	25	0.2-3.4				VA	LAS					
+Coenagrionidae															
+Argia spp.	0.4727 ± 0.1665	2.455 ± 0.421	0.85	23	0.3-3.9				NC  LAS						
+Enallagma aspersum	0.04	3.52	0.77	20					TN	Pierce et al. 1985					
+E. traviatum	n.074	7A1)	"7,"	1A					TN	"P  - i ,1 10Rc"					
+Ischnura sp.	0.1189	±	0.008	3	±	0.173	0.97	13	0.7-2.8	SC	ACB				
+Anisoptera															
+Cordulegastridae															
+Cordulegaster maculata	1.0025	±	0.344	2.401	±	0.583	0.67	18	0.9-8.6	VA	LAS				
+Corduliidae															
+Epitheca cynosura	0.2028	±	0.0077	3.026	±	0.096	0.92	85	0.9-5.7	SC	ACB				
+E. semiaquae	0.7491	±	0.1111	2.681	±	0.731	0.76	17	0.6-5.8	VA	LAS				
+Neurocordulia molesta	0.3214	±	0.0159	3.002	±	0.142	0.9	54	1.0-6.2	GA	ACB				
+Gomphidae															
+Dromogomphus sp.	0.7396	±	0.0514	2.416	±	0.26	0.9	12	1.6-3.5	SC	ACB				
+Gomphus spp.	0.8177	±	0.0934	2.454	±	0.204	0.94	24	1.1-6.6	VA	LAS				
+Progomphus obscurus	0.6964	±	0.14	2.646	±	0.666	0.72	28	0.7-4.3	VA	LAS				
+Libellulidae															
+Celithemis fasciata	0.0826	±	0.0031	3.252	±	0.071	0.97	70	0.5-5.5	SC	ACB				
+Erythemis simplicollis	0.0995	±	0.0083	3.592	±	0.229	0.95	15	1.5-4.8	SC	ACB				
+Ladona deplanata	0.208	±	0.0083	3.18	±	0.111	0.94	56	1.5-4.7	SC	ACB				
+Libellula spp.	0.2393	±	0.0161	2.909	±	0.152	0.94	24	0.7-4.2	SC	ACB				
+Plathemis lydia	0.4613	±	0.0413	3.019	±	0.307	0.83	22	1.6-4.6	SC	ACB				
+PLECOPTERA															
+Capniidae															
+Allocapnia spp.	0.7121	±	0.1902	3.25	±	0.813	0.61	29	0.3-0.8	NC  LAS					
+Allocavnia spp.	0.5438	±	0.1353	3.255	±	0.52	0.85	25	0.3-0.7	VA	IAS				
+Paraccrpnia angulata (SFR)	0.497	2.43							WV	Griffith et al. 1993					
+P angulata (WS4)	0.549	3.09							WV	Griffith et al. 1993					
+P angulata (W53)	0.712	3.51							WV	Griffth et al. 1993					
+P angulata (HSR)	0.364	2.44							WV	Griffith et al. 1993					
+Leuctridae															
+Leuctra sp.	0.8496 ± 0.1234	3.201 ± 0.254	0.9	34	0.4-0.8				VA	LAS					
+															
+															
+			APPENDIX 3.   Continued.								Al•				
+Taxon	a ± 1 SE	b ± 1 SE	r2	n	Range	% ash ± 1 SE   State				Source					
+Nemouridae															
+Amphinemura delosa	1.496	2.587	0.99	113	0.3-0.7				OK  Jop and Stewart 1987						
+Amphinemura spp.	0.4373 ± 0.0965	2.966 ± 0.686	0.72	62	0.4-1.2				VA	LAS					
+Prostoia completa	0.5263 ± 0.1826	2.762 ± 0.599	0.66	38	0.3-1.4				VA	LAS					
+P completa	2.323	3.34	0.96	63	0.4-1.1				OK	Jop and Stewart 1987					
+Zapada columbiana	0.45	3.1	0.98	70					AB	Mutch and Pritchard 1984					
+Z. haysi	0.512	2.934	0.87	40					CO	Allan 1984					
+Peltoperlidae															
+Tallaperla anna complex	0.47	4	0.98	42					AL	Petrus 1993					
+(HMB)															
+T anna complex (YC)	0.56	3.75	0.98	42					AL  Petrus 1993						
+Perldae															
+Acroneuria abnormis	0.3208 ± 0.0284	3.189 ± 0.276	0.96	22	0.7-5.1				NC  LAS						
+A. evoluta (IOW)	0.592	3.745	0.99	151	0.3-3.2				OK  Jop and Stewart 1987						
+Acroneuria spp.	0.1563 ± 0.0063	3.242 ± 0.119	0.93	52	0.8-4.0				GA  ACB						
+Agnetina capitata	0.2698 ± 0.0506	3.063 ± 0.658	0.61	21	0.6-3.2				VA	LAS					
+A. capitata (IOW)	1.125	3.233	0.99	152	0.4-2.9				OK	Jop and Stewart 1987					
+Beloneuria georgiana	0.5671 ± 0.1255	2.724 ± 0.565	0.81	31	0.4-4.3				VA	LAS					
+Calineuria californica	0.12	3.81	0.96	180					CA	Siegfried and Knight 1978					
+Eccoptura xanthenes	0.2444 ± 0.0660	3.326 ± 0.956	0.61	18	0.4-3.3				NC	LAS					
+Neoperla clymene	0.6825 ± 0.0767	2.000 ± 0.333	0.71	17	0.9-2.8				GA	ACB					
+Neoperla spp. (IOW)	1.169	2.551	0.99	88	0.3-1.9				OK	Jop and Stewart 1987					
+Paragnetina kansensis	0.2650 ± 0.0172	3.205 ± 0.189	0.83	63	1.1-5.6				GA	ACB					
+Perlinella drymo	0.5500 ± 0.1358	2.929 ± 0.821	0.72	18	0.5-3.4				VA	LAS					
+F'erlesta placida	0.2466 ± 0.0085	3.616 ± 0.181	0.83	83	0.8-2.3				GA	ACB					
+Perlesta sp.	0.4012 ± 0.1835	2.802 ± 0.898	0.61	15	0.4-3.3				NC	LAS					
+Perlodidae															
+Clioperla clio	0.4027 ± 0.0366	2.987 ± 0.305	0.94	26	0.6-3.3				NC  LAS						
+C. clio	0.5462 ± 0.0621	2.826 ± 0.381	0.85	50	0.4-3.3				VA  LAS						
+1gonur. group	0.7234 ± 0.1 833	2641 O.70g	n M	2	0.5-2.8				NC  LAS						
+	0.5442 n.i AAR	2.86	465	71	3	(15-2.5	VA	LAS							
+I. namata	1.167		2.472	0.99	125	0.4-1.7	OK Jop and Stewart 1987								
+Kogotus nonus	0.72		3.61	0.87	150		AB Walde and Davies 1987								
+Pteronarcyidae															
+Pteronarcus dorsata	0.8057 ± 0.0524	3.167 ± 0.211		0.86	36	1.6-5.2	GA  ACB								
+															
+															
+			APPENDIX 3.	Continued.											
+Taxon	a ± 1 SE		b ± 1 SE	r2	n	Range	% ash ± 1 SE	State		Source					
+Taeniopterygidae															
+Strophopteryx sp.	0.4388 ± 0.1202		3.921 ± 0.932	0.64	26	0.3-1.4		VA	LAS						
+Taeniopteryx lita	0.4236 ± 0.0211		2.683 ± 0.193	0.93	16	0.4-0.9		GA	ACB						
+Taeniopteryx spp.	0.7444 ± 0.1285		3.482 ± 0.764	0.81	44	0.4-1.7		NC	LAS						
+MEGALOPTERA															
+Corydalidae															
+Corydalus cornutus	1.4942 ± 0.2222		2.586 ± 0.323	0.85	41	0.8-9.2		NC  LAS							
+C. cornutus	1.0962 ± 0.3894		2.652 ± 0.500	0.72	21	0.7-10.1		VA	LAS						
+C. cornutus	0.5315 ± 0.0304		3.025 ± 0.079	0.95	82	0.4-9.5		GA	ACB						
+C. cornutus	0.321		3.256	0.97	90	0.6-11.5		AL	Koebel	1994					
+C. cornutus	0.273		2.87	0.92	445			TX	Brown and Fitzpatrick 1978						
+Nigronia serricornis	1.1666 -± 0.2311		2.474 -± 0.564	0.79	34	0.8-6.3		NC	LAS						
+N. serricornis	0.9367 ± 0.2806		2.635 ± 0.721	0.69	26	0.6-6.7		VA	LAS						
+Sialidae															
+Sialis aequalis	0.4861 ± 0.1865		3.108 ± 0.640	0.77	36	0.3-3.5		VA	LAS						
+Sialis sp.	0.5428 ± 0.1102		2.936 ± 0.862	0.69	25	0.4-3.4		NC	LAS						
+TRICHOPTERA															
+Brachycentridae															
+Brachycentrus sp.	2.221 ± 0.2330		3.349 ± 0.402	0.88	26	0.3-1.4		VA	LAS						
+Hydropsychidae															
+Cheumatopsyche spp.	1.362 ± 0.3711		2.284 ± 0.658	0.61	58	0.2-1.5		NC  LAS							
+Cheumatopsyche spp.	0.984 ± 0.2630		2.814 ± 0.471	0.83	47	0.2-1.4		VA	LAS						
+Hydropsyche elissoma	1.2106 ± 0.0831		2.580 ± 0.179	0.89	26	0.4-1.2		GA	ACB						
+H. incommoda	1.5955 ± 0.1438		3.621 ± 0.281	0.8	43	0.3-1.1		GA	ACB						
+H. orris (IOW)	1.702		2.773	0.97				MS	Payne and Miler 1996						
+Hydropsyche spp.	1.180 ± 0.2852		2.886 ± 0.888	0.69	122	0.2-1.8		NC	LAS						
+Hydropsyche spp.	1.265 ± 0.1622		2.747 - 0.284	0.87	36	0.2-1.7		VA	LAS						
+Macrostemum carolina	1.301 ± 0.1888		2.726 ± 0.390	0.92	16	0.2-1.7		NC	LAS						
+M. carolina	0.9474 ± 0.0561		3.009 ± 0.138	0.87	71	0.5-2.1		GA	ACB						
+Lepidostomatidae															
+Lepidostoma sp.	1.666 ± 0.1555		2.987 ± 0.222	0.94	33	0.2-1.3		VA	LAS						
+Leptoceridae															
+Nectopsyche sp.	2.644 ± 0.3665		3.297 ± 0.522	0.74	16	0.4-0.8		GA  ACB							
+Oecetis sop.	1.913 ±  0.5983		3.300 ±  0.637	0.67	23	0.2-1.0		VA	LAS						
+															
+															
+					APPENDIX 3.   Continued.										
+Taxon	a ± 1 SE		b ± 1 SE	r2	n	Range	% ash - 1 SE   State					Source			
+Limnephilidae															
+Apatania zonella	5.812		4.102			0.2-1.2				NT  Jorgenson et al. 1992					
+Grensia sp.	14S6		1 RSA			CI 1-9 n				NT  jnrooncrm g.t nl  1992					
+Irorwquia parvula	1.645 ±	0.3491	3.220 ± 0.780	0.66	18	04-2.0				VA	LAS				
+Pycnopsyche luculenta	1.823 ±	0.4729	3.114 ± 0.950	0.64	47	0.3-2.1				VA	LAS				
+P scabripennis	2.024 ±	0.3655	3.109 ± 0.436	0.85	27	0.3-2.3				VA	LAS				
+Odontoceridae															
+Psilotreta sp.	1.941 ±	0.5008	3.366 ± 0.521	0.79	18	0.3-1.6				VA	LAS				
+Philopotamidae															
+Chimarra sp.	1.465 ±	0.3913	3.087 ± 0.666	0.66	34	0.3-1.1				NC  LAS					
+Chimarra sp.	1.106 ±	0.2555	3.143 ± 0.762	0.64	29	0.2-1.2				VA	LAS				
+Phryganeidae															
+Ptilostomis sp.	2.042 ±	0.4896	3.333 -± 0.920	0.61	20	0.5-2.5				VA	LAS				
+Polycentropodidae															
+Neureclipsis sp.	0.6852 -	0.0718	4.580 ± 0.767	0.63	23	0.8-1.5				GA  ACB					
+Polycentropus spp.	1.568 ±	0.205	3.302 ± 0.352	0.9	25	0.2-1.3				VA	LAS				
+Psychomyiidae															
+Lype diversa	1.732 ±	0.1591	3.384 ± 0.307	0.96	28	0.2-1.3				VA	LAS				
+L. diversa*	2.173 ±	0.424	3.664 ± 0.183	0.94	28	0.2-0.7	1.6 ±		0.2	NC	ADH and JBW				
+Rhyacophilidae															
+Rhyacophila vao	6.8		4.123	0.78	613	0.2-0.9				AB	Dixon and Wrona 1992				
+Rhyacophila spp.	1.750 ±	0.2486	3.522 ± 0.879	0.73	32	0.4-1.5				VA	LAS				
+Sericostomatidae															
+Agarodes libalis	1.566 ±	0.3636	2.982 ± 0.520	0.85	41	0.3-1.4				VA	LAS				
+Fattigia pele	1.003 ±	0.095	3.309 ± 0.151	0.98	10	0.3-1.9	12.2 ±		3	NC	ADH and JBW				
+COLEOPTERA															
+Chrysomelidae															
+Galerucella nymphaeae	14.981 ±	9.31	3.670 ± 0.168	0.8	120	0.2-0.6	7.1 ±		0.3	GA  JBW					
+Elmidae															
+Ancyronyr wriegata	71)151 ±	141)19	1 4A5 + n Ann	l 74	17	n 9_n 5				VA	LAS				
+A. variegata	3.8971		2.804 ± 0.427	0.92	800	0.2-0.6				AR	Phillips 1997a				
+A. variegata	3.2589		2.645 ± 0.419	0.91	800	0.2-0.6				TX	Phillips 1997a				
+Macronychus glabratus	1.6041 ± 0.6005		3.499 ± 0.903	0.64	38	0.2-0.5				NC	LAS				
+M. glabratus	1.7685 ± 0.3845		3.357 ± 0.755	0.81	54	0.1-0.5				VA	LAS				
+M. glabratus	3.7289		2.758 ± 0.303	0.95		0.2-0.7				AR	Phillips 19976				
+															
+															
+			APPENDIX 3.	Continued.											
+Taxon	a ± 1 SE		b ± 1 SE	r2	n	Range	% ash ± 1 SE			State		Source			
+A4_ glabratug	3.1362	2.793	± 021	0_96		0.2-0.7				TX	Phillins	1997b			
+Stenelmis spp.	1.4040 ± 0.3123	3.794	±	0.844	0.6	46	0.2-0.6	NC	LAS						
+DIPTERA															
+Ceratopogonidae															
+Palpomyia spp. group	1.0431 ± 0.3625	2.383	±	0.63	0.72	18	0.1-0.3	NC  LAS							
+Palpomyia spp. group	1.3044 ± 0.3999	2.359	±	0.632	0.79	33	0.1-0.4	VA	LAS						
+Chironomidae	2.7842 ± 0.7005	2.835	±	0.399	0.9	73	01.-0.4	NC	LAS						
+Chironominae	1.9574 ± 0.3297	2.589	±	0.403	0.81	50	0.1-0.5	VA	LAS						
+Chironominae/	2.7802 ± 0.7666	2.841	±	0.293	0.88	61	0.1-0.4	NC	LAS						
+Orthocladiinae															
+Tanytarsini	1.6660 ± 0.4450	2.484	±	0.521	0.71	45	0.1-0.3	VA	LAS						
+Orthocladiinae	1.7899 ± 0.6622	2.311	±	0.566	0.64	39	0.1-0.4	VA	LAS						
+Tanypodinae	2.1694 ± 0.5630	2.623	±	0.377	0.85	46	0.1-0.4	VA	LAS						
+Tanypodinae	2.8046 ± 0.7109	2.955	±	0.57	0.85	12	0.1-0.4	NC	LAS						
+Empididae	0.9888 ± 0.6388	2.602	±	0.924	0.6	16	0.2-0.6	VA	LAS						
+cirmiliidap	1.3R24 ± 0.3644	3.161	±	00S	0.76	26	0.2-0_7	NC	LAS						
+Prosimulium spp.		2.553		4.347		0.88	34							CO	Allan 1984

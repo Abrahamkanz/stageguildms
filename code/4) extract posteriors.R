@@ -19,7 +19,7 @@ conditional_posts_fitted <- function(fit, effects, conditions = NULL){
     pivot_longer(cols = contains("V"), names_to = "iter") %>%
     mutate(iter = parse_number(iter))
 } 
-# this function should work
+
 
 # bring in models
 brm_aquatic_terr <- readRDS("models/brm_aquatic_terr.rds")

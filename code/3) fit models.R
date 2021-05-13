@@ -6,7 +6,7 @@ library(ggridges)
 library(lubridate)
 
 # get data
-
+# wrangle data into forms for different models (e.g., adding 0.01 to zeros, grouping by terrestrial/aquatic, etc.)
 emergence_2019_formodel <- readRDS("data/emergence_2019_new.rds") %>% 
   mutate(taxa = case_when(name == "chiro" ~ "chironomid", TRUE ~ "other")) %>% 
   group_by(location, julian, id, trap_days, start, collect) %>% 
@@ -41,30 +41,29 @@ chiros_only <- guild_diet_multi_drymass %>%
 
 
 # Models by fish guild ----------------------------------------------------------
-#total prey
-
-brm_total_guild <- brm(sample_mg_dm01 ~ fish_guild + (1|site) + (1|fish_species))
 
 # prop_terrestrial
 brm_aqua_terr_guild <- brm(sample_mg_dm01 ~ date*fish_guild*prey_ecosystem + (1|site) + (1|fish_species),
                               data = aquatic_terr, family = Gamma(link = "log"),
-                              prior = c(prior(normal(0, 1), class = "Intercept"),
-                                        prior(normal(0, 1), class = "b"),
+                              prior = c(prior(normal(2, 2), class = "Intercept"),
+                                        prior(normal(0, 2), class = "b"),
                                         prior(exponential(1), class = "sd")),
                               chains = 4, iter = 2000)
 
 saveRDS(brm_aqua_terr_guild, file = "models/brm_aqua_terr_guild.rds")
 
+
 # prop_aquatics_nonconsumers
 brm_feeding_nonfeeding <- brm(sample_mg_dm01 ~ date*fish_guild*prey_feeding + (1|site) + (1|fish_species),
                                data = aquatic_only, family = Gamma(link = "log"),
-                               prior = c(prior(normal(0, 1), class = "Intercept"),
-                                         prior(normal(0, 1), class = "b"),
+                               prior = c(prior(normal(2, 2), class = "Intercept"),
+                                         prior(normal(0, 2), class = "b"),
                                          prior(exponential(1), class = "sd")),
                                chains = 4, iter = 2000)
 
 saveRDS(brm_feeding_nonfeeding, file = "models/brm_feeding_nonfeeding.rds")
 
+brm_feeding_nonfeeding <- update(brm_feeding_nonfeeding, iter = 2000, chains = 4)
 
 # chiro stages
 brm_chiros_mg <- brm(sample_mg_dm01 ~ date*fish_guild*prey_stage + (1|site) + (1|fish_species),

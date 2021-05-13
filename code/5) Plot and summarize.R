@@ -40,7 +40,6 @@ posts_aquatic_terr_guild %>%
   ggplot(aes(x = prop_terrestrial, y = ..scaled.., color = fish_guild)) + 
   geom_density()
 
-plot_aquatic_terr
 
 # Proportion of aquatics that are non-consumers
 
@@ -60,7 +59,7 @@ posts_feeding %>%
 # Proportion terrestrial prey by fish guild ------------------
 
 posts_aquatic_terr_guild_wide <- posts_aquatic_terr_guild %>% 
-  group_by(prey_ecosystem, iter, date) %>% 
+  group_by(prey_ecosystem, iter, date, fish_guild) %>% 
   summarize(value = mean(value)) %>% 
   pivot_wider(names_from = prey_ecosystem, values_from = value) %>% 
   mutate(total = aquatic + terrestrial + unknown,
@@ -268,139 +267,10 @@ posts_total_preymass_averaged_over_time <- posts_mg_chirononchiro %>%
   summarize(mean = mean(total_mg)) %>% 
   mutate(response = "Prey Mass")  
 
-posts_mg_chirononchiro %>% 
-  group_by(date, fish_guild, iter) %>% 
-  summarize(sum = sum(value)) %>% 
-  group_by(fish_guild) %>% 
-  mutate(response = "Prey Mass") %>% 
-  summarize(mean_mg = mean(sum),
-            sd = sd(sum))
-
 posts_feeding_guilds_overtime <- posts_feeding_guilds %>% 
               group_by(fish_guild, iter) %>% 
               summarize(mean = mean(prop_nonfeeding_mg)) %>% 
               mutate(response = "Proportion of non-consumer aquatic prey")
-
-posts_feeding_guilds %>% 
-  group_by(fish_guild, date) %>% 
-  summarize(mean_propcons = mean(prop_nonfeeding_mg),
-            sd = sd(prop_nonfeeding_mg)) %>% 
-  filter(fish_guild == "benthic") %>% 
-  arrange(-mean_propcons)
-
-
-posts_mg_chiro_guilds %>% 
-  group_by(fish_guild) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg)) 
-
-
-posts_mg_chiro_guilds_overtime <-posts_mg_chiro_guilds %>% 
-              group_by(fish_guild, iter) %>% 
-              summarize(mean = mean(prop_nonfeeding_mg)) %>% 
-              mutate(response = "Proportion of chironomids eaten as larvae or pupae")
-
-
-a_overtime <- posts_total_preymass_averaged_over_time %>% 
-  mutate(fish_guild = fct_relevel(fish_guild, "benthic")) %>% 
-  ggplot(aes(x = mean, fill = fish_guild, color = fish_guild)) +
-  annotation_logticks(sides = "b") + 
-  ggdist::stat_halfeye(alpha = 0.7, size = 8) +
-  scale_fill_colorblind() +
-  scale_color_colorblind() +
-  scale_x_log10() +
-  scale_y_continuous() +
-  theme_classic() + 
-  theme(legend.position = "right") +
-  guides(color = F) +
-  theme(axis.line.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank()) +
-  labs(x = "Total prey mass per stomach (mgDM)",
-       fill = "Fish Domain") +
-  NULL
-
-b_overtime <- posts_mg_chirononchiro %>% 
-  filter(chiro == "chiro") %>% 
-  group_by(fish_guild, iter) %>% 
-  summarize(mean = mean(value)) %>% 
-  mutate(fish_guild = fct_relevel(fish_guild, "benthic")) %>% 
-  ggplot(aes(x = mean, fill = fish_guild, color = fish_guild)) +
-  annotation_logticks(sides = "b") + 
-  ggdist::stat_halfeye(alpha = 0.7, size = 8) +
-  scale_fill_colorblind() +
-  scale_color_colorblind() +
-  scale_x_log10() +
-  scale_y_continuous() +
-  theme_classic() + 
-  theme(legend.position = "right") +
-  guides(color = F) +
-  theme(axis.line.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank()) +
-  labs(x = "Chironomid mass per stomach (mgDM)",
-       fill = "Fish Domain") +
-  NULL
-
-c_overtime <- posts_feeding_guilds_overtime %>% 
-  mutate(fish_guild = fct_relevel(fish_guild, "benthic")) %>% 
-  ggplot(aes(x = mean, fill = fish_guild, color = fish_guild)) +
-  annotation_logticks(sides = "b") + 
-  ggdist::stat_halfeye(alpha = 0.7, size = 8) +
-  scale_fill_colorblind() +
-  scale_color_colorblind() +
-  scale_x_log10() +
-  scale_y_continuous() +
-  theme_classic() + 
-  theme(legend.position = "right") +
-  guides(color = F) +
-  theme(axis.line.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank()) +
-  labs(x = "Proportion of non-consumer aquatic prey in diet",
-       fill = "Fish Domain") +
-  coord_cartesian(x = c(0.001, 1)) +
-  NULL
-
-d_overtime <- posts_mg_chiro_guilds_overtime %>% 
-  mutate(fish_guild = fct_relevel(fish_guild, "benthic")) %>% 
-  ggplot(aes(x = mean, fill = fish_guild, color = fish_guild)) +
-  annotation_logticks(sides = "b") + 
-  ggdist::stat_halfeye(alpha = 0.7, size = 8) +
-  scale_fill_colorblind() +
-  scale_color_colorblind() +
-  scale_x_log10() +
-  scale_y_continuous() +
-  theme_classic() + 
-  theme(legend.position = "right") +
-  guides(color = F) +
-  theme(axis.line.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank()) +
-  labs(x = "Proportion of chironomids eaten as pupae or adults",
-       fill = "Fish Domain") +
-  coord_cartesian(x = c(.01, 1)) +
-  annotation_logticks(sides = "b") + 
-  NULL
-
-legend_overtime <- get_legend(a_overtime + theme(legend.position = "top"))
-
-plot_feeding_overtimenolegend <- plot_grid(a_overtime + guides(fill = F, color = F), 
-                                   b_overtime + guides(fill = F, color = F), 
-                                   c_overtime + guides(fill = F, color = F), 
-                                   d_overtime + guides(fill = F, color = F), 
-          align = "h", ncol = 2, labels = "auto")
-
-plot_feeding_overtime <- plot_grid(legend_overtime, plot_feeding_overtimenolegend,
-                                    ncol = 1, rel_heights = c(0.2, 1))
-
-saveRDS(plot_feeding_overtime, file = "plots/plot_feeding_overtime.rds") 
-ggsave(plot_feeding_overtime, file = "plots/plot_feeding_overtime.jpg", dpi = 500, width = 9, height = 6)
-
-
 
 
 
@@ -517,117 +387,6 @@ posts_mg_chirononchiro_guilds %>%
 
 
 
-# Summarize ---------------------------------------------------------------
-
-# compare proportion of adult and pupal chironomids
-posts_mg_chiro_guilds %>% 
-  group_by(fish_guild, date) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg),
-            sd = sd(prop_nonfeeding_mg)) %>% 
-  arrange(mean) %>% View()
-
-#mean mass of chiros in diet
-posts_mg_chirononchiro %>% 
-  filter(chiro == "chiro") %>% 
-  summarize(mean = mean(value),
-            sd = sd(value),
-            low95 = quantile(value, probs = 0.025),
-            high95 = quantile(value, probs = 0.975)) 
-
-#compare chironomid mg among fish guilds
-posts_mg_chirononchiro %>% 
-  filter(chiro == "chiro") %>% 
-  group_by(fish_guild, iter) %>% 
-  summarize(mean = mean(value)) %>% 
-  pivot_wider(names_from = fish_guild, values_from = mean) %>% 
-  mutate(diff_surf_int = surface - intermediate,
-         diff_ben_int = benthic - intermediate) %>% 
-  pivot_longer(cols = c(diff_surf_int, diff_ben_int)) %>% 
-  group_by(name) %>% 
-  summarize(prob_diff = sum(value > 0)/4000)
-
-#overall percent of non-feeding prey
-posts_feeding_guilds %>% 
-  group_by(date) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg),
-            sd = sd(prop_nonfeeding_mg)) %>% 
-  arrange(-mean)
-
-posts_feeding_guilds %>% 
-  group_by(fish_guild) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg),
-            sd = sd(prop_nonfeeding_mg)) %>% 
-  arrange(-mean)
-
-posts_feeding_guilds %>% 
-  group_by(fish_guild, date) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg),
-            sd = sd(prop_nonfeeding_mg)) %>% 
-  arrange(-mean)
-
-feeding_diffs <- posts_feeding_guilds %>% 
-  group_by(fish_guild, iter) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg)) %>% 
-  pivot_wider(names_from = fish_guild, values_from = mean) %>% 
-  mutate(diff_ben_surf = surface - benthic,
-         diff_ben_int = intermediate - benthic)
-
-sum(feeding_diffs$diff_ben_surf>0)
-sum(feeding_diffs$diff_ben_int>0)
-
-
-# Plot Raw Data -----------------------------------------------------------
-
-guild_diet_multi_drymass <- readRDS(file = "data/guild_diet_multi_drymass.rds")
-brm_chirononchiro_mg_data <- readRDS("models/brm_chirononchiro_mg.rds")[[3]]
-
-
-# feeding_nonfeeding
-
-guild_diet_multi_drymass %>% 
-  select(sample_id, fish_guild, date, prey_feeding, site, sample_mg_dm) %>%
-  group_by(sample_id, fish_guild, date, prey_feeding, site) %>% 
-  summarize(sample_mg_dm = sum(sample_mg_dm)) %>%
-  pivot_wider(names_from = prey_feeding, values_from = sample_mg_dm) %>% 
-  mutate(date = ymd(date)) %>% 
-  mutate(prop_nonfeeding = non_consumer/(consumer + non_consumer)) %>% 
-  ggplot(aes(x = date, y = prop_nonfeeding, color = fish_guild)) + 
-  geom_point() +
-  # geom_smooth() +
-  geom_boxplot(aes(group = interaction(date, fish_guild))) +
-  # scale_y_log10() +
-  facet_wrap(~site) +
-  NULL
-
-
-guild_diet_multi_drymass %>% 
-  select(sample_id, fish_guild, date, prey_stage, site, sample_mg_dm, prey_family) %>% 
-  filter(prey_family == "Chironomidae") %>% 
-  pivot_wider(names_from = prey_stage, values_from = sample_mg_dm) %>% 
-  mutate(date = ymd(date)) %>% 
-  mutate(prop_nonfeeding = (a+p)/(a+l+p)) %>% 
-  ggplot(aes(x = date, y = prop_nonfeeding, color = fish_guild)) + 
-  geom_point() +
-  # geom_smooth() +
-  geom_boxplot(aes(group = interaction(date, fish_guild))) +
-  # scale_y_log10() +
-  facet_wrap(~site)
-
-
-
-guild_diet_multi_drymass %>% 
-  group_by(fish_guild, prey_taxon, prey_stage) %>% 
-  mutate(date = ymd(date)) %>% 
-  mutate(sample_mg_dmscaled = sample_mg_dm/max(sample_mg_dm)) %>%
-  ggplot(aes(x = date, y = sample_mg_dmscaled, color = fish_guild, group = interaction(fish_guild, prey_taxon, prey_stage))) + 
-  geom_point() +
-  geom_smooth(se = F, alpha = 0.2) +
-  # geom_line() +
-  # scale_y_log10()+
-  coord_cartesian(ylim = c(0, 0.2)) +
-  NULL
-
-
 
 # Plot for individual fish species ----------------------------------------
 
@@ -671,12 +430,9 @@ total_species <- posts_aquatic_terr %>%
   coord_cartesian(xlim = c(0.5, 250)) +
   theme_classic()
 
-a_overtime2 <- posts_aquatic_terr_guild %>% 
-  group_by(fish_guild, iter, date) %>% 
-  summarize(total = sum(value)) %>% 
-  group_by(fish_guild, iter) %>% 
-  summarize(total = mean(total)) %>% 
-  ggplot(aes(x = total, y = ..scaled.., fill = fish_guild)) + 
+a_overtime2 <- posts_total_preymass_averaged_over_time %>% 
+  mutate(fish_guild = fct_relevel(fish_guild, "benthic")) %>% 
+  ggplot(aes(x = mean, y = ..scaled.., fill = fish_guild)) + 
   geom_density(alpha = 0.7) +
   scale_fill_colorblind() +
   scale_color_colorblind() +
@@ -712,7 +468,7 @@ prop_terr <- posts_aquatic_terr %>%
   geom_boxplot(aes(group = fish_species), outlier.shape = NA) +
   # coord_flip(ylim = c(NA, 150)) +
   scale_fill_colorblind() + 
-  labs(x = "Propotion of terrestrial prey",
+  labs(x = "Proportion of terrestrial prey",
        y = "Fish species or family",
        fill = "Fish Domain",
        subtitle = "b)") +
@@ -722,12 +478,14 @@ prop_terr <- posts_aquatic_terr %>%
   xlim(0, 0.75) +
   NULL
 
-
-c_overtime2 <- posts_aquatic_terr_guild %>% 
+posts_aquatic_terr_guild_overtime <- posts_aquatic_terr_guild %>% 
   pivot_wider(names_from = prey_ecosystem, values_from = value) %>% 
   mutate(total = terrestrial/(aquatic + terrestrial + unknown)) %>% 
   group_by(fish_guild, iter) %>% 
-  summarize(total = mean(total)) %>% 
+  summarize(total = mean(total))
+
+
+c_overtime2 <- posts_aquatic_terr_guild_overtime %>% 
   ggplot(aes(x = total, y = ..scaled.., fill = fish_guild)) + 
   geom_density(alpha = 0.7) +
   scale_fill_colorblind() +
@@ -741,7 +499,7 @@ c_overtime2 <- posts_aquatic_terr_guild %>%
         axis.ticks.y = element_blank(),
         axis.text.y = element_blank(),
         axis.title.y = element_blank()) +
-  labs(x = "Propotion of\nterrestrial prey",
+  labs(x = "Proportion of\nterrestrial prey",
        fill = "Fish Domain") +
   xlim(0, 0.75) +
   NULL
@@ -775,11 +533,9 @@ prop_cons_species <- posts_feeding_fishspecies %>%
   ylim(0,  0.75)
   
 
-c_overtime2 <- posts_feeding_guilds %>% 
-  # mutate(fish_guild = fct_relevel(fish_guild, "benthic")) %>% 
-  group_by(fish_guild, iter) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg)) %>% 
-  ggplot(aes(x = mean, y = ..scaled.., fill = fish_guild, color = fish_guild)) +
+d_overtime2 <- posts_feeding_guilds_overtime %>% 
+  mutate(fish_guild = fct_relevel(fish_guild, "benthic")) %>% 
+  ggplot(aes(x = mean, y = ..scaled.., fill = fish_guild)) +
   # ggdist::stat_halfeye(alpha = 0.7, size = 8) +
   geom_density(alpha = 0.7) +
   scale_fill_colorblind() +
@@ -798,13 +554,18 @@ c_overtime2 <- posts_feeding_guilds %>%
   coord_cartesian(x = c(0, 0.75)) +
   NULL
 
+
+# Combine averages across time --------------------------------------------
+
+
+
 legend_propcons <- get_legend(prop_cons_species + theme(legend.position = "top"))
 
 plot_prop_nonconsumer_species <- plot_grid(prop_cons_species + guides(fill = F, color = F) +
             theme(axis.title.x = element_blank(),
                   axis.title.y = element_blank(),
                   axis.text.y = element_blank()), 
-          c_overtime2 + guides(fill = F, color = F),
+          d_overtime2 + guides(fill = F, color = F),
           ncol = 1, align = "v", rel_heights = c(1, 0.5))
 
 
@@ -822,7 +583,21 @@ ggsave(plotall_final, file = "plots/plot_all_final.jpg", width = 7.5, height = 5
 
 
 
-# summarize plot data above
+# summarize plot data above ----------------
+
+#prey mass
+posts_total_preymass_averaged_over_time %>% 
+  pivot_wider(names_from = fish_guild, values_from = mean) %>% 
+  mutate(mean_all = (benthic + intermediate + surface)/3) %>% 
+  pivot_longer(cols = c(benthic, intermediate, surface, mean_all)) %>% 
+  rename(total = value, fish_guild = name) %>% 
+  group_by(fish_guild) %>% 
+  summarize(mean = mean(total),
+            sd = sd(total),
+            low95 = quantile(total, probs = 0.025),
+            median = quantile(total, probs = 0.5),
+            high95 = quantile(total, probs = 0.975))
+
 posts_aquatic_terr %>% 
   filter(iter <= 1000) %>% 
   pivot_wider(names_from = prey_ecosystem, values_from = value) %>% 
@@ -835,7 +610,28 @@ posts_aquatic_terr %>%
             upper = quantile(total, probs = 0.975)) %>% 
   arrange(-mean) %>% 
   mutate(response = "prey mg per fish")
-  
+
+
+
+#proportion of terrestrials
+posts_aquatic_terr_guild_overtime %>% 
+  group_by(fish_guild) %>% 
+  summarize(mean = mean(total),
+            sd = sd(total),
+            low95 = quantile(total, probs = 0.025),
+            median = quantile(total, probs = 0.5),
+            high95 = quantile(total, probs = 0.975))
+
+posts_aquatic_terr_guild_overtime %>% 
+  pivot_wider(names_from = fish_guild, values_from = total) %>% 
+  mutate(diff_ib = intermediate - benthic,
+         diff_sb = surface - benthic,
+         diff_si = surface - intermediate) %>%
+  pivot_longer(cols = contains("diff")) %>% 
+  group_by(name) %>% 
+  summarize(prob_diff = sum(value>0)/4000)
+
+
 
 prop_terr <- posts_aquatic_terr %>% 
   filter(iter <= 1000) %>% 
@@ -848,9 +644,10 @@ prop_terr <- posts_aquatic_terr %>%
             sd = sd(total),
             lower = quantile(total, probs = 0.025),
             upper = quantile(total, probs = 0.975)) %>% 
-  arrange(mean) %>% 
+  arrange(-mean) %>% 
   mutate(response = "prop_terrestrial")
 
+# proportion of non_consumers
 
 prop_non <- posts_feeding_fishspecies %>% 
   filter(iter <= 1000) %>% 
@@ -871,7 +668,7 @@ prop_terr %>% select(fish_species, median) %>%
   left_join(prop_non %>% select(fish_species, median) %>% 
               rename(prop_nonconsumer = median)) %>% 
   mutate(total_nonconsumer = prop_terrestrial + prop_nonconsumer) %>% 
-  arrange(total_nonconsumer)
+  arrange(-total_nonconsumer)
 
 posts_aquatic_terr_guild %>% 
   group_by(fish_guild, iter, date) %>% 
@@ -1135,7 +932,7 @@ mutate(emergence = (emergence*sd(scale_convert$estimate)) + mean(scale_convert$e
              position = position_jitter(height = 0.0091, width = 0.06),
              shape = 21, size = 0.7) +
   facet_wrap(~name) + 
-  labs(y = "Proportion of chironomids/neaten as pupae or adults ",
+  labs(y = "Proportion of chironomids\neaten as pupae or adults ",
        x = expression ("Chironomid emergence"~(number/m^2/d))) +
   # scale_color_colorblind() + 
   theme_classic() +

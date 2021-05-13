@@ -9,6 +9,18 @@ library(ggridges)
 library(readxl)
 library(lubridate)
 
+
+
+##################################################################################################
+#########   This script converts raw data to the curated dataset 'guild_diet_multi_drymass'
+#########   To skip these steps (which require internet and an API from taxize), use this code
+
+guild_diet_multi_drymass <- readRDS(file = "data/guild_diet_multi_drymass.rds")
+
+#########   To re-create the final dataset by hand, follow the code below
+##################################################################################################
+
+
 #get emergence data (select only taxa that are fully aquatic)
 emergence_2019_new <- read_excel("data/emergence_2019_new.xlsx") %>% select(anisoptera, canacidae, cerat, 
                                                                             chiro, dolichopodidae, empididae,
@@ -61,7 +73,7 @@ prey_taxa_have <- read_csv("data/prey_taxa_have.csv") %>%
 
 # load full dataset
 full_data_taxized <- read_excel("data/NEW_diet2019_fixed_images.xlsx") %>%
-  type_convert() %>%
+  type_convert() %>% 
   pivot_longer(cols = c(-pic_1,
                         -pic_2,
                         -pic_3,
@@ -291,6 +303,7 @@ guild_diet_multi_drymass <- have3 %>%
          prey_feeding = case_when(prey_ecosystem == "terrestrial" ~ "non_consumer",
                                   is.na(prey_feeding) ~ "consumer", 
                                   TRUE ~ prey_feeding))
+
 
 
 saveRDS(guild_diet_multi_drymass, file = "data/guild_diet_multi_drymass.rds")

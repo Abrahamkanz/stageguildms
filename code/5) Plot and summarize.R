@@ -583,7 +583,7 @@ ggsave(plotall_final, file = "plots/plot_all_final.jpg", width = 7.5, height = 5
 
 
 
-# summarize plot data above ----------------
+# summarize ----------------
 
 #prey mass
 posts_total_preymass_averaged_over_time %>% 
@@ -716,9 +716,21 @@ posts_feeding_guilds %>%
   mutate(response = "prop_nonconsumer")
 
 
-
-
 #total chiro
+posts_mg_chiro_guilds %>% 
+  group_by(fish_guild, iter) %>% 
+  summarize(mean_chiro = mean(total)) %>% 
+  # group_by(fish_guild) %>% 
+  ggplot(aes(x = mean_chiro, y = ..scaled.., fill = fish_guild)) +
+  geom_density()
+  # ungroup() %>% 
+  summarize(mean = mean(mean_chiro),
+            sd = sd(mean_chiro),
+            low95 = quantile(mean_chiro, probs = 0.025),
+            median = median(mean_chiro),
+            high95 = quantile(mean_chiro, probs = 0.975))
+
+
 total_chiro_species <- posts_totalchiro_fishspecies %>% 
   mutate(total_chiro = a + l + p,
          prop_nonfeeding = (a + p)/total_chiro) %>% 
@@ -748,7 +760,7 @@ d_overtime3 <- posts_mg_chiro %>%
   scale_color_colorblind() +
   scale_x_log10() +
   scale_y_continuous() +
-  coord_cartesian(ylim = c(0.1, 150)) +
+  # coord_cartesian(ylim = c(0.1, 150)) +
   theme_classic() + 
   theme(legend.position = "right") +
   guides(color = F) +

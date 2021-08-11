@@ -302,8 +302,18 @@ guild_diet_multi_drymass <- have3 %>%
   mutate(prey_feeding_overall = prey_feeding,
          prey_feeding = case_when(prey_ecosystem == "terrestrial" ~ "non_consumer",
                                   is.na(prey_feeding) ~ "consumer", 
-                                  TRUE ~ prey_feeding))
+                                  prey_taxon %in% c("Dolichopodidae", "Culicidae", "Empididae", "Simuliidae",
+                                                    "Zygoptera", "Anisoptera") & prey_stage == "a" ~ "non_consumer",
+                                  
+                                  TRUE ~ prey_feeding)) %>% 
+  mutate(sample_mg_dm01 = sample_mg_dm + 0.01,
+         sample_mg_dm01_permm = sample_mg_dm01/parse_number(length_mm)) %>% 
+  mutate(prey_ecosystem = case_when(is.na(prey_ecosystem) ~ "unknown",
+                                    TRUE ~ prey_ecosystem)) 
 
 
 
 saveRDS(guild_diet_multi_drymass, file = "data/guild_diet_multi_drymass.rds")
+write.csv(guild_diet_multi_drymass, file = "data/guild_diet_multi_drymass.csv", row.names = F)
+prey_categories <- guild_diet_multi_drymass %>% distinct(prey_taxon, prey_stage, prey_feeding, prey_ecosystem, prey_feeding_overall)
+write.csv(prey_categories, file = "data/prey_categories.csv", row.names = F)

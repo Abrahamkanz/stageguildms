@@ -1,40 +1,10 @@
-library(tidyverse)
-library(ggthemes)
-library(readxl)
-
-#read data
-guild_diet_multi_drymass <- readRDS(file = "data/guild_diet_multi_drymass.rds")
-
-fish_guilds <- guild_diet_multi_drymass %>% distinct(fish_species, fish_guild)
-emergence_2019_formodel <- readRDS("data/emergence_2019_new.rds") %>% 
-  mutate(taxa = case_when(name == "chiro" ~ "chironomid", TRUE ~ "other")) %>% 
-  group_by(location, julian, id, trap_days, start, collect) %>% 
-  summarize(total_emerged = as.integer(sum(value, na.rm = T))) %>% 
-  mutate(julian_raw = julian) %>% 
-  group_by(location) %>% 
-  mutate(julian = julian - min(julian),
-         total_perdayperm201 = total_emerged/trap_days/0.36 + 1,
-         total_perdayperm201_scaled = total_perdayperm201/max(total_perdayperm201), 
-         julian_fixed = as.factor(julian))
-
+source("code/functions.r") # functions
+source("code/make_data.r") # make data and load packag
 
 #fish numbers
-guild_diet_multi_drymass %>% distinct(sample_id, fish_species, fish_guild, date, site) %>% 
-  group_by(fish_species, fish_guild) %>% 
-  tally() %>% 
-  arrange(-n) %>% 
-  ungroup() %>% 
-  mutate(total = sum(n)) %>% View()
-
-guild_diet_multi_drymass %>% distinct(sample_id, fish_species, fish_guild, date, site) %>% 
-  group_by(fish_guild) %>% 
-  tally() %>% 
-  arrange(-n) %>% 
-  ungroup() %>% 
-  mutate(total = sum(n))
 
 fish_table <- guild_diet_multi_drymass %>% distinct(sample_id, fish_species, fish_guild) %>% 
-  group_by(fish_species, fish_guild) %>% 
+  group_by(fish_species) %>% 
   tally() %>% 
   arrange(-n)
 
@@ -46,7 +16,7 @@ prop_terr <- guild_diet_multi_drymass %>%
   group_by(fish_species, prey_ecosystem, sample_id) %>% 
   summarize(total_mg = sum(sample_mg_dm, na.rm = T)) %>% 
   pivot_wider(names_from = prey_ecosystem, values_from = total_mg) %>% 
-  mutate(total = sum(aquatic, terrestrial, unknown, `NA`)) %>% 
+  mutate(total = sum(aquatic, terrestrial, unknown)) %>% 
   mutate(prop_terrestrial = terrestrial/total) %>% 
   arrange(desc(prop_terrestrial))
 
@@ -118,15 +88,24 @@ n_class <- guild_diet_multi_drymass %>%
 
 #proportions
 # proportion of prey taxa
-guild_diet_multi_drymass %>% 
+totals <- guild_diet_multi_drymass %>% 
+  select(prey_class, prey_family, fish_species, fish_guild, prey_taxon, prey_stage, prey_ecosystem, number, sample_mg_dm) %>%
+  # group_by(prey_taxon) %>% 
+  summarize(number_total = sum(number),
+            mg_dm_total = sum(sample_mg_dm)) %>% 
+  mutate(prey_taxon = "Grand Total")
+
+diet_summaries <- guild_diet_multi_drymass %>% 
   select(prey_class, prey_family, fish_species, fish_guild, prey_taxon, prey_stage, prey_ecosystem, number, sample_mg_dm) %>%
   group_by(prey_taxon) %>% 
   summarize(number_total = sum(number),
             mg_dm_total = sum(sample_mg_dm)) %>% 
   mutate(number_prop = number_total/sum(number_total),
          mg_prop = mg_dm_total/sum(mg_dm_total)) %>% 
-  arrange(-mg_prop) %>% View()
+  arrange(-mg_prop) %>% 
+  bind_rows(totals)
 
+write.csv(diet_summaries, file = "tables/diet_summaries.csv", row.names = F)
 
 
 proportions_by_preytaxa <- guild_diet_multi_drymass %>% 

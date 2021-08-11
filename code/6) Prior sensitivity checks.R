@@ -1,233 +1,242 @@
-library(brms)
-library(tidyverse)
-library(janitor)
-library(cowplot)
+source("code/functions.r") # functions
+source("code/make_data.r") # make data and load packages 
 
-
-#function to extract conditional posteriors
-conditional_posts_fitted <- function(fit, effects, conditions = NULL){
-  library(brms)
-  library(tidyverse)
-  library(janitor)
-  list_of_data <- conditional_effects(fit, effects, conditions)[[1]]
-  new_names <- list_of_data %>% 
-    select(-names(fit$data[1])) %>% 
-    select(-cond__, -effect1__, -effect2__, -estimate__, -se__, -lower__, -upper__) %>% 
-    remove_empty("cols")
-  
-  as_tibble(t(fitted(fit, newdata = list_of_data, re_formula = NA, summary = FALSE))) %>%
-    cbind(new_names) %>%
-    pivot_longer(cols = contains("V"), names_to = "iter") %>%
-    mutate(iter = parse_number(iter))
-} 
-
-
-# bring in models - just the main feeding models
-# brm_aquatic_terr <- readRDS("models/brm_aquatic_terr.rds")
-brm_aqua_terr_guild <- readRDS("models/brm_aqua_terr_guild.rds")
-brm_feeding_nonfeeding <- readRDS("models/brm_feeding_nonfeeding.rds")
-# brm_chiros_mg <- readRDS("models/brm_chiros_mg.rds") #chiro life stages
-# brm_chirononchiro_mg <- readRDS("models/brm_chirononchiro_mg.rds") #all taxa
-# brm_feeding_nonfeeding_fishspecies <- readRDS("models/brm_feeding_nonfeeding_fishspecies.rds")
-# brm_totalchiro_fishspecies <- readRDS("models/brm_totalchiro_fishspecies.rds")
-# brm_chirononchiro_fishspecies <- readRDS("models/brm_chirononchiro_fishspecies.rds")
-# stan_emerge_beta <- readRDS("models/stan_emerge_beta.rds")
-# stan_emergechiro_beta <- readRDS(file = "models/stan_emergechiro_beta.rds")
-# stan_emergechirodiet_beta <- readRDS(file = "models/stan_emergechirodiet_beta.rds")
-# brm_emerge_bydate <- readRDS("models/brm_emerge_bydate.rds")
+# load models
+brm_aquatic_terr <- readRDS(file = "models/species_models/brm_aquatic_terr.rds")
+brm_cons_noncons <- readRDS(file = "models/species_models/brm_cons_noncons.rds")
+brm_chiro_stages <- readRDS(file = "models/species_models/brm_chiro_stages.rds")
 
 # Prior predictive simulation ---------------------------------------------
 
 # refit with priors only
-brm_aqua_terr_guild_prior <- update(brm_aqua_terr_guild, iter = 1000, chains = 1, sample_prior = "only")
-brm_feeding_nonfeeding_prior <- update(readRDS("models/brm_feeding_nonfeeding.rds"), sample_prior = "only")
+brm_aquatic_terr_priorpost <- posterior_samples(brm_aquatic_terr) %>% select(contains(c("b_Intercept", "species"))) %>% as_tibble() %>% clean_names() %>% 
+  select(!contains("r_site")) %>% 
+  mutate(iter = 1:nrow(.)) %>% 
+  filter(iter <= 100) %>% 
+  pivot_longer(-iter, names_to = "parameter", values_to = "posterior") %>% 
+  group_by(parameter, iter) %>% 
+  mutate(prior = case_when(grepl("b_inter", parameter) ~ rnorm(1, 1, 2),
+                          TRUE ~ rnorm(1, 0, 5))) %>% 
+  mutate(model = "brm_aquatic_terr") %>% 
+  ungroup() %>% 
+  mutate(parameter_no = as.integer(as.factor(parameter)))
 
-saveRDS(brm_aqua_terr_guild_prior, file = "models/brm_aqua_terr_guild_prior.rds")
-saveRDS(brm_feeding_nonfeeding_prior, file = "models/brm_feeding_nonfeeding_prior.rds")
+brm_cons_noncons_priorpost <- posterior_samples(brm_cons_noncons) %>% select(contains(c("b_Intercept", "fish_prey"))) %>% as_tibble() %>% clean_names() %>% 
+  select(!contains("r_site")) %>% 
+  mutate(iter = 1:nrow(.)) %>% 
+  filter(iter <= 100) %>% 
+  pivot_longer(-iter, names_to = "parameter", values_to = "posterior") %>% 
+  group_by(parameter, iter) %>% 
+  mutate(prior = case_when(grepl("b_inter", parameter) ~ rnorm(1, 1, 2),
+                           TRUE ~ rnorm(1, 0, 5))) %>% 
+  mutate(model = "brm_cons_noncons") %>% 
+  ungroup() %>% 
+  mutate(parameter_no = as.integer(as.factor(parameter)))
 
-
-
-#extract prior and posterior conditionals
-#aquatic terrestrial
-conditions_ecosystem = data.frame(prey_ecosystem = unique(brm_aqua_terr_guild$data$prey_ecosystem))
-posts_aquatic_terr_guild <-  conditional_posts_fitted(brm_aqua_terr_guild, effects = "date:fish_guild", conditions = conditions_ecosystem) %>% 
-  mutate(model = "posterior")
-priors_aquatic_terr_guild <-  conditional_posts_fitted(brm_aqua_terr_guild_prior, effects = "date:fish_guild", conditions = conditions_ecosystem) %>% 
-  mutate(model = "prior")
-
-
-#aquatic feeding/non-feeding
-conditions_feeding = data.frame(prey_feeding = unique(brm_feeding_nonfeeding$data$prey_feeding))
-posts_feeding <- conditional_posts_fitted(brm_feeding_nonfeeding, effects = "date:fish_guild", conditions = conditions_feeding) %>% 
-  mutate(model = "posterior")
-priors_feeding <-  conditional_posts_fitted(brm_feeding_nonfeeding_prior, effects = "date:fish_guild", conditions = conditions_feeding) %>% 
-  mutate(model = "prior")
-
-
-# combine posterior and priors
-posts_priors_aquatic_terr_guild <- bind_rows(posts_aquatic_terr_guild, priors_aquatic_terr_guild)
-posts_priors_feeding <- bind_rows(posts_feeding, priors_feeding)
-
-
-# wrangle
-
-posts_priors_aquatic_terr_guild_wide <- posts_priors_aquatic_terr_guild %>% 
-  group_by(prey_ecosystem, iter, date, fish_guild, model) %>% 
-  summarize(value = mean(value)) %>% 
-  pivot_wider(names_from = prey_ecosystem, values_from = value) %>% 
-  mutate(total = aquatic + terrestrial + unknown,
-         prop_terrestrial = terrestrial/total) 
-
-posts_priors_aquatic_terr_guild_overtime <- posts_priors_aquatic_terr_guild_wide %>% 
-  group_by(fish_guild, iter, model) %>% 
-  summarize(mean = mean(prop_terrestrial)) %>% 
-  mutate(response = "Terrestrial prey")
+brm_chiro_stages_priorpost <- posterior_samples(brm_chiro_stages) %>% select(contains(c("b_Intercept", "fish_prey"))) %>% as_tibble() %>% clean_names() %>% 
+  select(!contains("r_site")) %>% 
+  mutate(iter = 1:nrow(.)) %>% 
+  filter(iter <= 100) %>% 
+  pivot_longer(-iter, names_to = "parameter", values_to = "posterior") %>% 
+  group_by(parameter, iter) %>% 
+  mutate(prior = case_when(grepl("b_inter", parameter) ~ rnorm(1, 1, 2),
+                           TRUE ~ rnorm(1, 0, 5))) %>% 
+  mutate(model = "brm_chiro_stages") %>% 
+  ungroup() %>% 
+  mutate(parameter_no = as.integer(as.factor(parameter)))
 
 
-posts_priors_feeding_guilds <- posts_priors_feeding %>% filter(iter <= 1000) %>%
-  group_by(prey_feeding, fish_guild, date, iter, model) %>% 
-  mutate(value = mean(value)) %>% 
-  pivot_wider(names_from = prey_feeding, values_from = value) %>% 
-  mutate(prop_nonfeeding_mg = non_consumer/(consumer + non_consumer))
+all_priorpost <- bind_rows(brm_aquatic_terr_priorpost, brm_cons_noncons_priorpost, brm_chiro_stages_priorpost)
 
-posts_priors_feeding_overtime <- posts_priors_feeding_guilds %>% 
-  group_by(fish_guild, iter, model) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg)) %>% 
-  mutate(response = "Non-consumer aquatic prey")
+all_prior_post_summaries <- all_priorpost %>% 
+  pivot_longer(cols = c(prior, posterior)) %>% 
+  group_by(parameter, parameter_no, model, name) %>% 
+  summarize(median = median(value),
+            sd = sd(value)) %>% 
+  mutate(name = fct_relevel(name, "prior"))
 
-# combine data and plot  -----------------------
 
-posts_priors_plot_all <- bind_rows(posts_priors_feeding_overtime, posts_priors_aquatic_terr_guild_overtime)
+prior_post_plot <- all_prior_post_summaries %>% 
+  ggplot(aes(x = parameter_no, y = median, ymin = median - sd, ymax = median + sd, color = name)) + 
+  geom_errorbar(size = 0.5, alpha = 0.6) +
+  facet_wrap(~model, scales = "free_x", ncol = 1) +
+  scale_color_colorblind() +
+  theme_bw()
 
-plot_prior_posterior <- posts_priors_plot_all  %>%  
-  mutate(model = as.factor(model)) %>%
-  mutate(model = fct_relevel(model, "prior")) %>%
-  ggplot(aes(x = mean , fill = model, y = ..scaled..)) + 
-  geom_density() +
-  scale_fill_grey(start = 0.9, end = 0.2) +
-  labs(x = "Proportion in diet",
-       fill = "") +
-  facet_grid(response~fish_guild) +
-  theme_classic() +
-  theme(axis.line.y = element_blank(),
-        axis.ticks.y = element_blank(),
-        axis.text.y = element_blank(),
-        axis.title.y = element_blank()) +
-  scale_x_continuous(breaks = c(0, .25, 0.5, 0.75, 1),
-                     labels = c("0", "0.25", "0.5", "0.75", "1"))
+saveRDS(prior_post_plot, file = "plots/prior_post_plot.rds")
+ggsave(prior_post_plot, file = "plots/prior_post_plot.jpg", width = 5, height = 6, dpi = 400)
 
-ggsave(plot_prior_posterior, file = "plots/plot_prior_posterior.jpg", dpi = 500, width = 8, height = 4)
 
 
 
 # prior predictive checks -----------------------
 
-brm_aqua_terr_guild <- readRDS("models/brm_aqua_terr_guild.rds")
-brm_feeding_nonfeeding <- readRDS("models/brm_feeding_nonfeeding.rds")
+acheck <- pp_check(brm_aquatic_terr, type = "boxplot") + scale_y_log10() +
+  labs(title = "a) Model = terrestrial prey and total prey") 
 
-acheck <- pp_check(brm_aqua_terr_guild, type='stat_grouped', stat= "mean", group = "fish_guild") +
-  labs(title = "a) Check mean. Model = terrestrial prey") 
-bcheck <- pp_check(brm_feeding_nonfeeding, type='stat_grouped', stat='mean', group = "fish_guild") +
-  labs(title = "b) Check mean. Model = non-feeding") 
-ccheck <- pp_check(brm_aqua_terr_guild, type = "hist") +
-  labs(title = "c) Compare histograms. Model = terrestrial prey") +
-  theme(axis.text.x = element_text(size = 8))
-dcheck <- pp_check(brm_feeding_nonfeeding, type = "hist") +
-  labs(title = "d) Compare histograms. Model = non-feeding") +
-  theme(axis.text.x = element_text(size = 8))
+bcheck <- pp_check(brm_cons_noncons, type = "boxplot") + scale_y_log10() +
+  labs(title = "b) Model = prop consumers") 
 
-ppc_plots <- plot_grid(acheck, bcheck, ccheck, dcheck,
-                       ncol = 2) 
+ccheck <- pp_check(brm_chiro_stages, type = "boxplot") + scale_y_log10() +
+  labs(title = "c) Model = prop consumer chiros") 
 
-ggsave(ppc_plots, file = "plots/ppc_plots.jpg", dpi = 400, width = 13, height = 7)
+ppc_plots <- plot_grid(acheck, bcheck, ccheck, ncol = 1) 
+
+ggsave(ppc_plots, file = "plots/ppc_plots.jpg", dpi = 400, width = 6, height = 7)
 
 
 
 # prior sensitivity checks -----------------------
 
-brm_aqua_terr_guild_wider2 <- update(brm_aqua_terr_guild,
-                                    prior = c(prior(normal(2, 4), class = "Intercept"),
-                                              prior(normal(0, 4), class = "b"),
-                                              prior(exponential(1), class = "sd")),
-                                    iter = 500, chains = 1)
+brm_aquatic_terr_wider2 <- readRDS(file = "models/species_models/brm_aquatic_terr_wider2.rds")
+brm_cons_noncons_wider2 <- readRDS(file = "models/species_models/brm_cons_noncons_wider2.rds")
+brm_chiro_stages_wider2 <- readRDS(file = "models/species_models/brm_chiro_stages_wider2.rds")
 
-saveRDS(brm_aqua_terr_guild_wider2, file = "models/brm_aqua_terr_guild_wider2.rds")
+# brm_aquatic_terr_wider2 <- update(brm_aquatic_terr,
+#                                prior = c(prior(normal(1, 4), class = "Intercept"),
+#                                          prior(normal(0, 10), class = "b"),
+#                                          prior(normal(0, 5), class = "sds"),
+#                                          prior(exponential(1), class = "sd"),
+#                                          prior(gamma(1, 0.1), class = "shape")),
+#                                iter = 1000, chains = 1)
+# 
+# saveRDS(brm_aquatic_terr_wider2, file = "models/species_models/brm_aquatic_terr_wider2.rds")
+# 
+# 
+# brm_cons_noncons_wider2 <- brm(sample_mg_dm01 ~ s(date_no, by = fish_prey_feeding) + (1|fish_prey_feeding) + (1|site),
+#                                                         data = aquatic_only,
+#                                                         family = Gamma(link = "log"),
+#                                                         prior = c(prior(normal(1, 4), class = "Intercept"),
+#                                                                   prior(normal(0, 10), class = "b"),
+#                                                                   prior(normal(0, 5), class = "sds"),
+#                                                                   prior(exponential(1), class = "sd"),
+#                                                                   prior(gamma(1, 0.1), class = "shape")),
+#                                                         iter = 1000, chains = 1)
+# 
+# saveRDS(brm_cons_noncons_wider2, file = "models/species_models/brm_cons_noncons_wider2.rds")
+# 
+# 
+# brm_chiro_stages_wider2 <- brm(sample_mg_dm01 ~ s(date_no, by = fish_prey_stage) + (1|fish_prey_stage) + (1|site),
+#                         data = chiros_only,
+#                         family = Gamma(link = "log"),
+#                         prior = c(prior(normal(1, 4), class = "Intercept"),
+#                                   prior(normal(0, 10), class = "b"),
+#                                   prior(normal(0, 5), class = "sds"),
+#                                   prior(exponential(1), class = "sd"),
+#                                   prior(gamma(1, 0.1), class = "shape")),
+#                         iter = 1000, chains = 1)
+# 
+# saveRDS(brm_chiro_stages_wider2, file = "models/species_models/brm_chiro_stages_wider2.rds")
 
 
-brm_feeding_nonfeeding_wider <- update(brm_feeding_nonfeeding,
-                                       prior = c(prior(normal(2, 4), class = "Intercept"),
-                                                 prior(normal(0, 4), class = "b"),
-                                                 prior(exponential(1), class = "sd")),
-                                       iter = 500, chains = 1)
+# extract aquatic_terrestrial posts
+fit <- brm_aquatic_terr_wider2
+list_of_data <- conditional_effects(fit, effects = "date_no:species_aquatic_terr",
+                                    re_formula = NULL,
+                                    resolution = 30)[[1]]
+new_names <- list_of_data %>% 
+  select(-names(fit$data[1])) %>% 
+  select(-cond__, -effect1__, -effect2__, -estimate__, -se__, -lower__, -upper__) %>% 
+  remove_empty("cols")
 
-saveRDS(brm_feeding_nonfeeding_wider, file = "models/brm_feeding_nonfeeding_wider.rds")
-
-
-brm_aqua_terr_guild_wider2 <- readRDS(file = "models/brm_aqua_terr_guild_wider2.rds")
-brm_feeding_nonfeeding_wider <- readRDS(file = "models/brm_feeding_nonfeeding_wider.rds")
-
-#aquatic terrestrial
-conditions_ecosystem = data.frame(prey_ecosystem = unique(brm_aqua_terr_guild$data$prey_ecosystem))
-posts_aquatic_terr_guild_wider <-  conditional_posts_fitted(brm_aqua_terr_guild_wider2, effects = "date:fish_guild", conditions = conditions_ecosystem) %>% 
-  mutate(model = "posterior_wider_priors")
-
-
-#aquatic feeding/non-feeding
-conditions_feeding = data.frame(prey_feeding = unique(brm_feeding_nonfeeding$data$prey_feeding))
-posts_feeding_wider <- conditional_posts_fitted(brm_feeding_nonfeeding_wider, effects = "date:fish_guild", conditions = conditions_feeding) %>% 
-  mutate(model = "posterior_wider_priors")
-
-
-
-# combine posterior
-posts_aquatic_terr_guild_all_wider <- bind_rows(posts_aquatic_terr_guild, posts_aquatic_terr_guild_wider)
-posts_feeding_all_wider <- bind_rows(posts_feeding, posts_feeding_wider)
-
-
-# wrangle
-
-posts_priors_aquatic_terr_guild_wide_wider <- posts_aquatic_terr_guild_all_wider %>% 
-  group_by(prey_ecosystem, iter, date, fish_guild, model) %>% 
-  summarize(value = mean(value)) %>% 
+posts_aquatic_terr_wider <- as_tibble(t(fitted(fit, newdata = list_of_data, re_formula = NULL, summary = F))) %>%
+  cbind(new_names) %>%
+  pivot_longer(cols = contains("V"), names_to = "iter") %>%
+  mutate(iter = parse_number(iter)) %>% 
+  left_join(dates_correct) %>% 
+  mutate(date_no = date_no + unique(total$mean_date_no)) %>% 
+  left_join(aquatic_terr %>% distinct(species_aquatic_terr, fish_species, prey_ecosystem)) %>% 
+  mutate(date = as_date(date_no, origin = min(ymd(aquatic_only$date)))) %>% 
+  select(iter, value, date, prey_ecosystem, fish_species) %>% 
   pivot_wider(names_from = prey_ecosystem, values_from = value) %>% 
-  mutate(total = aquatic + terrestrial + unknown,
-         prop_terrestrial = terrestrial/total) 
+  mutate(total = aquatic + terrestrial,
+         prop_terrestrial = terrestrial/total)
 
-posts_priors_aquatic_terr_guild_overtime_wider <- posts_priors_aquatic_terr_guild_wide_wider %>% 
-  group_by(fish_guild, iter, model) %>% 
-  summarize(mean = mean(prop_terrestrial)) %>% 
-  mutate(response = "Terrestrial prey")
+# extract consumer/non_consumer posts
+fit <- brm_cons_noncons_wider2
 
+list_of_data <- conditional_effects(fit, effects = "date_no:fish_prey_feeding",
+                                    re_formula = NULL,
+                                    resolution = 30)[[1]]
+new_names <- list_of_data %>% 
+  select(-names(fit$data[1])) %>% 
+  select(-cond__, -effect1__, -effect2__, -estimate__, -se__, -lower__, -upper__) %>% 
+  remove_empty("cols")
 
-
-
-posts_priors_feeding_guilds_wider <- posts_feeding_all_wider %>% filter(iter <= 1000) %>%
-  group_by(prey_feeding, fish_guild, date, iter, model) %>% 
-  mutate(value = mean(value)) %>% 
+posts_cons_noncons_fishspecies_wider <- as_tibble(t(fitted(fit, newdata = list_of_data, re_formula = NULL, summary = F))) %>%
+  cbind(new_names) %>%
+  pivot_longer(cols = contains("V"), names_to = "iter") %>%
+  mutate(iter = parse_number(iter)) %>% 
+  left_join(dates_correct) %>% 
+  mutate(date_no = date_no + unique(total$mean_date_no)) %>% 
+  left_join(aquatic_only %>% distinct(fish_prey_feeding, fish_species, prey_feeding)) %>% 
+  mutate(date = as_date(date_no, origin = min(ymd(aquatic_only$date)))) %>% 
+  select(iter, value, date, prey_feeding, fish_species) %>% 
   pivot_wider(names_from = prey_feeding, values_from = value) %>% 
-  mutate(prop_nonfeeding_mg = non_consumer/(consumer + non_consumer))
+  mutate(total = consumer + non_consumer,
+         prop_nonconsumer = non_consumer/total)
 
-posts_priors_feeding_overtime_wider <- posts_priors_feeding_guilds_wider %>% 
-  group_by(fish_guild, iter, model) %>% 
-  summarize(mean = mean(prop_nonfeeding_mg)) %>% 
-  mutate(response = "Non-consumer aquatic prey")
+# extract chironomid posts
+fit <- brm_chiro_stages_wider2
+
+list_of_data <- conditional_effects(fit, effects = "date_no:fish_prey_stage",
+                                    re_formula = NULL,
+                                    resolution = 30)[[1]]
+new_names <- list_of_data %>% 
+  select(-names(fit$data[1])) %>% 
+  select(-cond__, -effect1__, -effect2__, -estimate__, -se__, -lower__, -upper__) %>% 
+  remove_empty("cols")
+
+posts_chiros_fishspecies_wider <- as_tibble(t(fitted(fit, newdata = list_of_data, re_formula = NULL, summary = F))) %>%
+  cbind(new_names) %>%
+  pivot_longer(cols = contains("V"), names_to = "iter") %>%
+  mutate(iter = parse_number(iter)) %>% 
+  left_join(dates_correct) %>% 
+  mutate(date_no = date_no + unique(total$mean_date_no)) %>% 
+  left_join(chiros_only %>% distinct(fish_prey_stage, fish_species, prey_stage)) %>% 
+  mutate(date = as_date(date_no, origin = min(ymd(aquatic_only$date)))) %>% 
+  select(iter, value, date, prey_stage, fish_species) %>% 
+  pivot_wider(names_from = prey_stage, values_from = value) %>% 
+  mutate(total = a + l + p,
+         prop_nonconsumer = (a + p)/total)
+
+rm(posts_chiros_wider_fishspecies)
+
+# combine with main posteriors
+posts_aquatic_terr <- readRDS(file = "posteriors/posts_aquatic_terr.rds") 
+posts_cons_noncons_fishspecies <- readRDS(file = "models/posts_cons_noncons_fishspecies.rds") 
+posts_chiros_fishspecies <- readRDS(file = "models/posts_chiros_fishspecies.rds") 
+
+posts_sens_aquatic_terr <- posts_aquatic_terr %>% mutate(model = "posterior") %>% 
+  bind_rows(posts_aquatic_terr_wider %>% mutate(model = "posterior_wider_priors")) %>% 
+  pivot_longer(cols = c(total, prop_terrestrial)) %>% select(iter, date, fish_species, model, name, value)
+
+posts_sens_cons <- posts_cons_noncons_fishspecies %>% mutate(model = "posterior") %>% 
+  bind_rows(posts_cons_noncons_fishspecies_wider %>% mutate(model = "posterior_wider_priors")) %>% 
+  pivot_longer(cols = prop_nonconsumer) %>% select(iter, date, fish_species, model, name, value)
+
+posts_sens_cons_chiro <- posts_chiros_fishspecies %>% mutate(model = "posterior") %>% 
+  bind_rows(posts_chiros_fishspecies_wider %>% mutate(model = "posterior_wider_priors")) %>% 
+  rename(prop_nonconsumer_chiro = prop_nonconsumer) %>% 
+  pivot_longer(cols = prop_nonconsumer_chiro) %>% select(iter, date, fish_species, model, name, value)
 
 
-prior_sens_aquatic_terr <- posts_priors_aquatic_terr_guild_overtime_wider %>% 
-  ggplot(aes(x = mean, y = ..scaled.., fill = model)) + 
-  geom_density(alpha = 0.5) + 
-  facet_wrap(~fish_guild) +
-  scale_fill_grey() +
-  labs(title = "a) Proportion terrestrial",
-       x = "Proportion")
+all_posts_compare <- bind_rows(posts_sens_aquatic_terr, posts_sens_cons, posts_sens_cons_chiro)
 
-prior_sens_feeding <- posts_priors_feeding_overtime_wider %>% 
-  ggplot(aes(x = mean, y = ..scaled.., fill = model)) + 
-  geom_density(alpha = 0.5) + 
-  facet_wrap(~fish_guild) +
-  scale_fill_grey() +
-  labs(title = "b) Proportion aquatic feeding",
-       x = "Proportion")
 
-prior_sens <- plot_grid(prior_sens_aquatic_terr, prior_sens_feeding, ncol = 1)
-ggsave(prior_sens, file = "plots/prior_sens.jpg", dpi = 500, width = 6, height = 4)
+prior_sens_plot <- all_posts_compare %>% 
+  # filter(name != "total") %>% 
+  group_by(iter, name, model, fish_species) %>% 
+  summarize(mean = mean(value)) %>% 
+  ggplot(aes(x = mean, y = fish_species, fill = model)) +
+  # geom_density(aes(y = ..scaled..), alpha = 0.5) +
+  geom_density_ridges(alpha = 0.8) +
+  scale_fill_colorblind() +
+  facet_wrap(~name, ncol = 2, scales = "free_x") +
+  theme_bw() +
+  scale_x_log10() +
+  theme(legend.position = "top") +
+  NULL
+
+saveRDS(prior_sens_plot, file = "plots/prior_sens_plot.rds")
+ggsave(prior_sens_plot, file = "plots/prior_sens_plot.jpg", dpi = 500, width = 6, height = 7)

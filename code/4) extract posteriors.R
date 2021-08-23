@@ -9,7 +9,7 @@ brm_chiro_stages <- readRDS(file = "models/species_models/brm_chiro_stages.rds")
 
 # load posteriors (or fit again with code below)
 posts_aquatic_terr <- readRDS(file = "posteriors/posts_aquatic_terr.rds") # use for prop terrestrial and for total prey mass
-posts_cons_noncons_fishspecies <- readRDS(file = "models/posts_cons_noncons_fishspecies.rds") 
+posts_cons_noncons_fishspecies <- readRDS(file = "posteriors/posts_cons_noncons_fishspecies.rds") 
 
 # Extract posteriors 
 # aquatic terrestrial ----------------------------------------------------------
@@ -63,7 +63,7 @@ posts_cons_noncons_fishspecies <- as_tibble(t(fitted(fit, newdata = list_of_data
   mutate(total = consumer + non_consumer,
          prop_nonconsumer = non_consumer/total)
 
-saveRDS(posts_cons_noncons_fishspecies, file = "models/posts_cons_noncons_fishspecies.rds")
+saveRDS(posts_cons_noncons_fishspecies, file = "posteriors/posts_cons_noncons_fishspecies.rds")
 
 
 
@@ -94,5 +94,5 @@ posts_chiros_fishspecies <- as_tibble(t(fitted(fit, newdata = list_of_data, re_f
   mutate(total = a + l + p,
          prop_nonconsumer = (a + p)/total)
 
-saveRDS(posts_chiros_fishspecies, file = "models/posts_chiros_fishspecies.rds")
+saveRDS(posts_chiros_fishspecies, file = "posteriors/posts_chiros_fishspecies.rds")
 

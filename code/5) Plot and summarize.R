@@ -10,15 +10,15 @@ posts_aquatic_terr <- readRDS(file = "posteriors/posts_aquatic_terr.rds") %>%
                                                  aquatic = mean(aquatic)) %>% mutate(fish_species = "Average")) # add overall average
 
 
-posts_cons_noncons_fishspecies <- readRDS(file = "models/posts_cons_noncons_fishspecies.rds") %>% 
-  bind_rows(readRDS(file = "models/posts_cons_noncons_fishspecies.rds") %>% 
+posts_cons_noncons_fishspecies <- readRDS(file = "posteriors/posts_cons_noncons_fishspecies.rds") %>% 
+  bind_rows(readRDS(file = "posteriors/posts_cons_noncons_fishspecies.rds") %>% 
               group_by(iter, date) %>% summarize(prop_nonconsumer = mean(prop_nonconsumer),
                                                  total = mean(total),
                                                  consumer = mean(consumer),
                                                  non_consumer = mean(non_consumer)) %>% mutate(fish_species = "Average")) # add overall average
 
-posts_chiros_fishspecies <- readRDS(file = "models/posts_chiros_fishspecies.rds") %>% 
-  bind_rows(readRDS(file = "models/posts_chiros_fishspecies.rds") %>% 
+posts_chiros_fishspecies <- readRDS(file = "posteriors/posts_chiros_fishspecies.rds") %>% 
+  bind_rows(readRDS(file = "posteriors/posts_chiros_fishspecies.rds") %>% 
               group_by(iter, date) %>% summarize(prop_nonconsumer = mean(prop_nonconsumer),
                                                  total = mean(total),
                                                  a = mean(a),
@@ -26,6 +26,12 @@ posts_chiros_fishspecies <- readRDS(file = "models/posts_chiros_fishspecies.rds"
                                                  p = mean(p)) %>% mutate(fish_species = "Average"))
 
 # data to sort by
+color_median <- posts_cons_noncons_fishspecies %>% 
+  group_by(fish_species) %>% 
+  summarize(median = median(prop_nonconsumer)) %>% 
+  mutate(median = case_when(fish_species == "Average" ~ 0, T ~ median)) # places average at the bottom
+
+
 number_of_dates <- aquatic_terr %>% 
   distinct(date, fish_species) %>% 
   group_by(fish_species) %>% 
@@ -34,10 +40,6 @@ number_of_dates <- aquatic_terr %>%
   bind_rows(tibble(fish_species = "Average", n = 606))%>% 
   left_join(color_median)
 
-color_median <- posts_cons_noncons_fishspecies %>% 
-  group_by(fish_species) %>% 
-  summarize(median = median(prop_nonconsumer)) %>% 
-  mutate(median = case_when(fish_species == "Average" ~ 0, T ~ median)) # places average at the bottom
 
 # data to plot
 prop_consumer_data_plot <- aquatic_only %>% 
@@ -402,7 +404,7 @@ posts_aquatic_terr %>%
 posts_cons_noncons_fishspecies %>% 
   filter(fish_species != "Average") %>% 
   pivot_longer(cols = c(prop_nonconsumer)) %>% 
-  group_by(name) %>% 
+  group_by(name, fish_species) %>% 
   summarize(median = median(value),
             sd = sd(value),
             low = quantile(value, probs = 0.125),

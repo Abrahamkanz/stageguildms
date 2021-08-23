@@ -82,7 +82,6 @@ ccheck <- pp_check(brm_chiro_stages, type = "boxplot") + scale_y_log10() +
 
 ppc_plots <- plot_grid(acheck, bcheck, ccheck, ncol = 1) 
 
-ggsave(ppc_plots, file = "plots/ppc_plots.jpg", dpi = 400, width = 6, height = 7)
 
 
 
@@ -204,8 +203,8 @@ rm(posts_chiros_wider_fishspecies)
 
 # combine with main posteriors
 posts_aquatic_terr <- readRDS(file = "posteriors/posts_aquatic_terr.rds") 
-posts_cons_noncons_fishspecies <- readRDS(file = "models/posts_cons_noncons_fishspecies.rds") 
-posts_chiros_fishspecies <- readRDS(file = "models/posts_chiros_fishspecies.rds") 
+posts_cons_noncons_fishspecies <- readRDS(file = "posteriors/posts_cons_noncons_fishspecies.rds") 
+posts_chiros_fishspecies <- readRDS(file = "posteriors/posts_chiros_fishspecies.rds") 
 
 posts_sens_aquatic_terr <- posts_aquatic_terr %>% mutate(model = "posterior") %>% 
   bind_rows(posts_aquatic_terr_wider %>% mutate(model = "posterior_wider_priors")) %>% 

@@ -131,16 +131,14 @@ diff_plot <- diffs %>%
 get_prior(diff_stage_minus_taxa ~ prop_nonlarval_z + (1|date) + (1|site) + (1|fish_species),
           data = diffs , family = gaussian())
 
-brm_dietoverlap <- readRDS(file = "models/species_models/brm_dietoverlap.rds")
-
-# brm_dietoverlap <- brm(bf(diff_stage_minus_taxa ~ prop_nonlarval_z + (1|date) + (1|site) + (1|fish_species),
-#                           sigma ~ prop_nonlarval_z),
-#                        data = diffs , family = gaussian(),
-#                        prior = c(prior(normal(0, 1), class = "Intercept"),
-#                                  prior(normal(0, 1), class = "b"),
-#                                  prior(exponential(2), class = "sd")))
-
-# saveRDS(brm_dietoverlap, file = "models/species_models/brm_dietoverlap.rds")
+brm_dietoverlap <- brm(bf(diff_stage_minus_taxa ~ prop_nonlarval_z + (1|date) + (1|site) + (1|fish_species),
+                          sigma ~ prop_nonlarval_z),
+                       data = diffs , family = gaussian(),
+                       prior = c(prior(normal(0, 1), class = "Intercept"),
+                                 prior(normal(0, 1), class = "b"),
+                                 prior(exponential(2), class = "sd")),
+                       file = "models/species_models/brm_dietoverlap.rds",
+                       file_refit = "on_change", cores = 4, chains = 4, iter = 2000)
 
 overlap_conds <- conditional_effects(brm_dietoverlap)
 

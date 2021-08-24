@@ -1,0 +1,7 @@
+"fish_domain","model","int_mean","int_sd","slope_mean","slope_sd"
+"benthic","Everything",0.18,0.04,1.08,0.11
+"intermediate","Everything",0.29,0.07,1.03,0.14
+"surface","Everything",0.31,0.06,1.36,0.11
+"benthic","Chironomids Only",0.26,0.06,1.07,0.14
+"intermediate","Chironomids Only",0.39,0.1,1.07,0.18
+"surface","Chironomids Only",0.37,0.07,1.16,0.13
